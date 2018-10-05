@@ -2,7 +2,7 @@
 
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = '';
+$dbpass = 'secret';
 $dbname = 'bosscoffee';
 
 $conn = new mysqli($dbhost,$dbuser,$dbpass,$dbname);
@@ -40,7 +40,7 @@ function registrasi($data) {
 	$password = password_hash($password, PASSWORD_DEFAULT);
 
 	// insert database
-	mysqli_query($conn, "INSERT INTO bosses VALUES('', '$username', '$password')");
+	mysqli_query($conn, "INSERT INTO bosses (`username`, `password`) VALUES('$username', '$password')");
 	return mysqli_affected_rows($conn);  
 }
 

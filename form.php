@@ -4,8 +4,6 @@ if(!isset($_SESSION['login'])) {
 	header("Location: login.php");
 	exit;
 }
-
-
 	include 'functions.php';
 	$data = mysqli_query($conn, "select * from penjualan");
 ?>
