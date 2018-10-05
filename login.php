@@ -1,33 +1,3 @@
-<?php
-session_start();
-
-if( isset($_SESSION['login'])) {
-	header("Location: index.php");
-	exit;
-}
-require 'functions.php';
-	if (isset($_POST['login'])) {
-		$username = $_POST["username"];
-		$password = $_POST["password"];
-
-		$result = mysqli_query($conn, "SELECT * FROM bosses WHERE username = '$username'");
-
-		// cek username
-		if(mysqli_num_rows($result) == 1) {
-
-			// cek password
-			$row = mysqli_fetch_assoc($result);
-			if (password_verify($password, $row["password"])) {
-				// set session
-				$_SESSION["login"] = true;
-				header("Location: index.php");
-				exit;
-			}
-		}
-
-		$error = true;
-	}
-?>
 
 <!DOCTYPE html>
 <html>
@@ -51,7 +21,7 @@ require 'functions.php';
 	</tr>
 				</table>
 			</div>
-	<form class="fl" action="post">
+		<form class="fl" method="POST" action="actionlogin.php">
 				<input class="itpw" type="text" name="username" placeholder="username">
 				<br>
 				<input class="itpw" type="password" name="password" placeholder="password">
