@@ -1,0 +1,114 @@
+*{
+	padding:0px;
+	margin:0px;
+	font-family:comic sans ms;
+ }
+
+#login{
+	width:100%;
+	height:100%;
+	background-image: url("img/belakang2.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+	position:absolute;	
+      }
+
+.center{
+	 width:350px;
+	 height:auto;
+	 margin:0 auto;
+	 margin-top:100px;
+	 background-color:#f0f0f0;
+	 box-shadow:2px 2px 16px 0px #757575;
+	 padding:40px;
+}
+
+.center h2{
+		font-size:40px;
+		text-align:center;
+		color:#000000;
+		padding-bottom:40px;
+	  }	
+
+.fl{
+	width:100%;
+   }
+
+.itpw{
+	width:92%;
+	padding:13px 10px;
+	margin:5px 0px;
+	background-color:#dbdbdb;
+	border:3px solid #000000;
+	color:#000000;
+	transition:all 0.7s;
+     }
+
+.its{
+	width:99.7%;
+	font-size:19px;
+	color:#f5f5f5;
+	padding:12px;
+	margin:5px 0;
+	background-color:#000000;
+	border:none;
+	transition:all 0.4s;
+    }
+
+.itpw:focus{
+		border-bottom:3px solid #BF8E41;
+		color:#BF8E41;
+	   }
+
+.its:hover,.its:focus{
+			opacity:0.7;
+			cursor:pointer;
+	  	     }
+
+.center b{
+	   margin:20px 0;
+	   text-align:center;
+	   font-size:14px;
+	 }
+
+.center b a{ 
+		color:#757575;
+	   }
+@media screen and (min-width:15000px)
+{
+	.center{
+			width:35px;
+		}
+}
+
+@media screen and(max-width:900px){
+	#login{
+		background-size:100% 100%;
+		}
+
+.its{
+	width:100%;
+     }
+
+.itpw{
+	font-size:15px;
+	width:90%;
+	padding:13px 3%;
+	}
+
+.center{
+	 width:230%;
+	}
+
+.center b{
+	   font-size:13px;
+	 }
+
+}
+
+@media screen and (max-width:350px){
+ .center{
+	 padding;20px;
+	 width:75%;
+	}
+}
