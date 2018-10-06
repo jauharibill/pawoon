@@ -28,7 +28,7 @@ if(!isset($_SESSION['login'])) {
 			</li>
 			<li>
 				<label for="nama">Pesanan</label>
-				<select name="nama" id="nama">
+				<select name="nama" id="nama" onchange="nambahPesanan()">
 					<?php 
 					$sql = "SELECT * FROM `menu`";
 					$menus = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -43,19 +43,36 @@ if(!isset($_SESSION['login'])) {
 			</li>
 			<li>
 				<label for="jumlah">Jumlah</label>
-				<input type="text" name="jumlah" id="jumlah" onfocus="mulaiHitung()" onblur="berhentiHitung()">
+				<input type="text" name="jumlah" id="jumlah" onchange="nambahPesanan()"> 
 			</li>
 			<li>
 				<label for="harga">Harga</label>
-				<input type="text" name="harga" id="harga" onfocus="mulaiHitung()" onblur="berhentiHitung()">
+				<input type="text" name="harga" id="harga">
 			</li>
+			<li>
+				<label for="harga">Total Harga</label>
+				<input type="text" name="total_harga" id="total_harga">
+			</li> 
 			<li>
 				<button type="button" id="tambah_pesanan" onclick="nambahPesanan()">Tambah</button>
 			</li>
 		</ul>
+		<script type="text/javascript" src="jquery-3.3.1.js"></script>
 		<script type="text/javascript">
 			function nambahPesanan(){
-				
+				nama = $('#nama').val();
+				jumlah = $("#jumlah").val();
+				harga = $("#harga").val();
+				$.ajax({
+					url:'menu/getMenu.php?id='+nama, 
+					type:'GET',
+					success: function(result){
+						data = jQuery.parseJSON(result);
+						total = jumlah*(data.harga);
+						$("#harga").val(data.harga);
+						$("#total_harga").val(total);
+				}});
+
 			}
 			function mulaiHitung()  {
 				Interval = setInterval("Hitung()",1);
