@@ -20,6 +20,7 @@ if(!isset($_SESSION['login'])) {
 </head>
 <body>
 	<form action="" method="POST">
+
 		<ul>
 			<li>
 				<label for="tanggal">Tanggal</label>
@@ -27,7 +28,18 @@ if(!isset($_SESSION['login'])) {
 			</li>
 			<li>
 				<label for="nama">Pesanan</label>
-				<input type="text" name="nama" id="nama">
+				<select name="nama" id="nama">
+					<?php 
+					$sql = "SELECT * FROM `menu`";
+					$menus = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+					while($menu = mysqli_fetch_assoc($menus)){
+
+					?>
+					<option value="<?= $menu['ID'] ?>"><?= $menu['nama'] ?></option>
+					<?php 
+						}
+					?>
+				</select>
 			</li>
 			<li>
 				<label for="jumlah">Jumlah</label>
@@ -38,13 +50,13 @@ if(!isset($_SESSION['login'])) {
 				<input type="text" name="harga" id="harga" onfocus="mulaiHitung()" onblur="berhentiHitung()">
 			</li>
 			<li>
-				<label for="total">Total</label>
-				<input type="text" name="total" id="total" readonly onfocus="mulaiHitung()" onblur="berhentiHitung()">
+				<button type="button" id="tambah_pesanan" onclick="nambahPesanan()">Tambah</button>
 			</li>
-			<button type="submit" name="input">Submit</button>
-			<a href="penjualan.php">Kembali</a>
 		</ul>
 		<script type="text/javascript">
+			function nambahPesanan(){
+				
+			}
 			function mulaiHitung()  {
 				Interval = setInterval("Hitung()",1);
 			}

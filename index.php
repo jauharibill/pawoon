@@ -21,6 +21,9 @@ require 'functions.php';
 	<button>
 		<a href="form.php">Form Penjualan</a>
 	</button>
+	<button>
+		<a href="menu/create.php">Form Menu</a>
+	</button> 
 	<a href="logout.php">
 		<button>Log Out</button>
 	</a>
