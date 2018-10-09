@@ -71,7 +71,7 @@ require 'functions.php';
 			<button>Log Out</button>
 		</a>
 	</div>
-	<div class="row">
+	<div class="row m-auto" style="width: 900px; padding-top: 100px;">
 	    <div class="col">
 	    	<a href="penjualan.php">
 	    		<img src="img/penjualan.png" class="rounded" width="200">
@@ -88,6 +88,12 @@ require 'functions.php';
 	    	</a>   
 	    </div>
   	</div>
-
+  	<div id="footer">
+		  <footer class="" style="height: auto; line-height: 45px;background-color: #000000; position: fixed; bottom: 0px;width: 100%;  text-align: center;">
+		        <b style="color: #ffffff"> 
+		          BOSS COFFEE | HALF HUMAN HALF COFFEE |
+		        </b>    
+		</footer>
+	</div>
 </body>
 </html>
