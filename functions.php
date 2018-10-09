@@ -2,7 +2,7 @@
 
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = 'secret';
+$dbpass = '';
 $dbname = 'bosscoffee';
 
 $conn = new mysqli($dbhost,$dbuser,$dbpass,$dbname);
