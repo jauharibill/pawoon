@@ -5,9 +5,65 @@ if(!isset($_SESSION['login'])) {
     exit;
 }
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Menu</title>
+    <script type="text/javascript" src="../jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="icon" href="../img/kopi.png">
+    <style>
+         body{ 
+                background-image:url(../img/);  
+                background-repeat:no-repeat;
+                background-position:top; 
+                background-size:1400px; 
+                border: 2px; 
+                        }
 
-<a href="create.php">New</a>
-<table>
+         #ex3{
+                  width: auto; box-shadow: 0px 0px 0px 0px; 
+                  border-radius: 3px; color:#fff ; 
+                  background: rgba(23,20,20,0.52); 
+                  padding: 5px 5px 5px 10px; 
+                  font-family: comic sans ms; 
+                  text-align: center; 
+                  width: auto; 
+                    }
+    </style>
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
+            <div>
+                <a class="navbar-brand" href="index.php">
+                    <img src="../img/boss.png" width="35" height="35">             
+                    <b style="color: #fff">BOSS COFFEE</b>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <a href="create.php">
+                        <button type="button" class="btn btn-primary">New</button>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+    </div>
+<!--<a href="create.php">
+    <button>New</button>
+</a>-->
+
+<br>
+<center>
+<table class="table" border="1">
+    <tr>
+        <th colspan="4" style="text-align: center;">MENU</th>
+    </tr>
     <tr>
       <th>ID</th> 
       <th>Nama</th> 
@@ -26,9 +82,12 @@ if(!isset($_SESSION['login'])) {
         <td><?= $data['ID']; ?></td> 
         <td><?= $data['nama']; ?></td> 
         <td><?= $data['harga']; ?></td> 
-        <td><a href="edit.php?id=<?= $data['ID']; ?>">Edit</a><a href="delete.php?id=<?= $data['ID']; ?>">Delete</a></td> 
+        <td><a href="edit.php?id=<?= $data['ID']; ?>"><button class="btn">Edit</button></a><a href="delete.php?id=<?= $data['ID']; ?>"><button class="btn">Delete</button></a></td> 
     </tr>
     <?php 
     }
     ?>
 </table>
+</center>
+</body>
+</html>
