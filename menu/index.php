@@ -10,7 +10,7 @@ if(!isset($_SESSION['login'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Menu</title>
+    <title>INDEX MENU</title>
     <script type="text/javascript" src="../jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
@@ -60,15 +60,15 @@ if(!isset($_SESSION['login'])) {
 
 <br>
 <center>
-<table class="table" border="1">
+<table class="table" border="1" style="font-family: comic sans ms">
     <tr>
         <th colspan="4" style="text-align: center;">MENU</th>
     </tr>
     <tr>
       <th>ID</th> 
-      <th>Nama</th> 
-      <th>Harga</th> 
-      <th>Action</th> 
+      <th>NAMA</th> 
+      <th>HARGA</th> 
+      <th>ACTION</th> 
     </tr>
     <?php 
 
@@ -82,7 +82,7 @@ if(!isset($_SESSION['login'])) {
         <td><?= $data['ID']; ?></td> 
         <td><?= $data['nama']; ?></td> 
         <td><?= $data['harga']; ?></td> 
-        <td><a href="edit.php?id=<?= $data['ID']; ?>"><button class="btn">Edit</button></a><a href="delete.php?id=<?= $data['ID']; ?>"><button class="btn">Delete</button></a></td> 
+        <td><a href="edit.php?id=<?= $data['ID']; ?>"><button class="btn btn-warning">Edit</button></a><a href="delete.php?id=<?= $data['ID']; ?>"><button class="btn btn-danger">Delete</button></a></td> 
     </tr>
     <?php 
     }

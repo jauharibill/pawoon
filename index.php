@@ -13,7 +13,7 @@ require 'functions.php';
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Boss Coffee</title>
+	<title>BOSS COFFEE</title>
 	<script type="text/javascript" src="jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -43,7 +43,7 @@ require 'functions.php';
 		<nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
 			<div>
 				<a class="navbar-brand" href="index.php">
-					<img src="img/boss.png" width="35" height="35">				
+					<img src="img/boss.png" width="45" height="45">				
 					<b style="color: #fff">BOSS COFFEE</b>
 				</a>
 			</div>
