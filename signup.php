@@ -15,33 +15,36 @@ if(isset($_POST["register"])) {
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>HALAMAN REGISTRASI</title>
-	<style>
-		label {
-			display: block;
-		}
-	</style>
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="coba.css">
+	<link rel="icon" href="img/kopi.png">
 </head>
 <body>
-	<h1>HALAMAN REGISTRASI</h1>
-	<form action="" method="POST">
-		<ul>
-			<li>
-				<label for="username">Username :</label>
-				<input type="text" name="username" id="username">
-			</li>
-			<li>
-				<label for="password">Password :</label>
-				<input type="password" name="password" id="password">
-			</li>
-			<li>
-				<label for="password2">Konfirmasi Password :</label>
-				<input type="password" name="password2" id="password2">
-			</li>
-			<li>
-				<button type="submit" name="register">Register</button>
-			</li>
-		</ul>
-	</form>
+	<div id="signup">
+		<div class="center">
+			<div align="center">
+				<form action="" method="POST">
+					<div class="form-group">
+					    <label for="username"  style="text-align: left;">Username</label>
+					    <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan Username">
+					</div>
+					<div class="form-group">
+					    <label for="password">Password</label>
+					    <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password">
+					</div>
+					<div class="form-group">
+					    <label for="password2">Konfirmasi Password</label>
+					    <input type="password" class="form-control" id="password2" name="password2" placeholder="Konfirmasi Password">
+					</div>
+					<button type="submit" class="btn btn-primary" name="register">Register</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
