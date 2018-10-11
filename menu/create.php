@@ -15,10 +15,11 @@ if(!isset($_SESSION['login'])) {
     <script type="text/javascript" src="../js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../coba.css">
     <link rel="icon" href="../img/kopi.png">
     <style>
          body{ 
-                background-image:url(../img/);  
+                background-image:url(../img/belakang2.jpg);  
                 background-repeat:no-repeat;
                 background-position:top; 
                 background-size:1400px; 
@@ -37,10 +38,10 @@ if(!isset($_SESSION['login'])) {
     </style>
 	<title>Create</title>
 </head>
-<body>
+<body class="center">
 		<form action="store.php" method="POST">
-		<input class="" type="text" name="nama" placeholder="Nama Pesanan">
-		<input class="" type="number" name="harga" placeholder="Harga">
+		<input class="form-control" type="text" name="nama" placeholder="Nama Pesanan">
+		<input class="form-control" type="number" name="harga" placeholder="Harga">
 		<button class="btn btn-primary" >Simpan</button>
 		</form>
 </body>
