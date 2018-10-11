@@ -24,7 +24,7 @@ $data = mysqli_query($conn, "select * from menu");
                 background-image:url(../img/gambar4.jpg);  
                 background-repeat:no-repeat;
                 font-family: comic sans ms;
-                font-size: ;
+                font-size:      ;
                 text-align:;
                 color: #ffffff;
                 background-position:top; 
