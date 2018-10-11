@@ -17,11 +17,16 @@ $data = mysqli_query($conn, "select * from menu");
     <script type="text/javascript" src="../js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../coba.css">
     <link rel="icon" href="../img/kopi.png">
     <style>
          body{ 
-                background-image:url(../img/);  
+                background-image:url(../img/gambar4.jpg);  
                 background-repeat:no-repeat;
+                font-family: comic sans ms;
+                font-size: ;
+                text-align:;
+                color: #ffffff;
                 background-position:top; 
                 background-size:1400px; 
                 border: 2px; 
@@ -37,7 +42,7 @@ $data = mysqli_query($conn, "select * from menu");
                   width: auto; 
                     }
     </style>
-</head>
+</head >
 <body>
     <div>
         <nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
@@ -62,7 +67,8 @@ $data = mysqli_query($conn, "select * from menu");
 
 <br>
 
-<!-- <table class="table" border="1" style="font-family: comic sans ms">
+<!--
+<div class="center"> <table class="table center" border="1" style="font-family: comic sans ms">
     <tr>
         <th colspan="4" style="text-align: center;">MENU</th>
     </tr>
@@ -89,7 +95,8 @@ $data = mysqli_query($conn, "select * from menu");
     <?php 
     }
     ?>
-</table> -->
+</table>
+</div> -->
 
 
 
