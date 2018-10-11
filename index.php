@@ -58,12 +58,12 @@ require 'functions.php';
 	</div>
 	<div class="row m-auto" style="width: 900px; padding-top: 180px;">
 	    <div class="col">
-	    	<a href="penjualan.php">
+	    	<a href="form.php">
 	    		<img src="img/penjualan.png" class="rounded" width="200">
 	    	</a>
 	    </div>
 	    <div class="col">
-	    	<a href="form.php">
+	    	<a href="penjualan.php">
 	    		<img src="img/barang.png" class="rounded" width="200">
 	    	</a>
 	    </div>
