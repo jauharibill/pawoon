@@ -56,29 +56,14 @@ require 'functions.php';
 			</div>
 		</nav>
 	</div>
-	
-	<button>
-		<a href="penjualan.php">Laporan Penjualan</a>
-	</button>
-	<button>
-		<a href="form.php">Form Penjualan</a>
-	</button>
-	<button>
-		<a href="menu/create.php">Form Menu</a>
-	</button> 
-	<div>
-		<a href="logout.php">
-			<button>Log Out</button>
-		</a>
-	</div>
-	<div class="row m-auto" style="width: 900px; padding-top: 100px;">
+	<div class="row m-auto" style="width: 900px; padding-top: 180px;">
 	    <div class="col">
 	    	<a href="penjualan.php">
 	    		<img src="img/penjualan.png" class="rounded" width="200">
 	    	</a>
 	    </div>
 	    <div class="col">
-	    	<a href="#">
+	    	<a href="form.php">
 	    		<img src="img/barang.png" class="rounded" width="200">
 	    	</a>
 	    </div>
