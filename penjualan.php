@@ -24,25 +24,13 @@ if(!isset($_SESSION['login'])) {
 	<style>
 		 body{ 
 			background-image:url(img/belakang2.jpg);  
-			background-repeat:no-repeat;
-			background-position:top; 
-			background-size:1400px; 
-     	    border: 2px; 
-		}
-		#ex3 {
-			width: auto;
-			box-shadow: 0px 0px 0px 0px;
-			border-radius: 3px; color: #fff;
-			background: rgba(23, 20, 20, 0.52);
-			padding: 5px 5px 5px 10px;
-			font-family: comic sans ms;
-			text-align: center;
-		}
+			background-repeat:repeat; 
+			background-size:1360px; 
 	</style>
 </head>
 <body class="text-center">
 	<div class="mr-5 ml-5 ">
-	<table  class="table" border="1" style="box-shadow: 0px 0px 0px 0px; background: rgba(23,20,20,0.52); ">
+	<table  class="table" border="1" style="box-shadow: 0px 0px 0px 0px; background: rgba(23,20,20,0.52); margin-top: 20px">
 		<thead class="thead- " style="font-family: comic sans ms; text-align: center; color: #ffffff; width: auto; ">
 			<tr>
           <td colspan="7"><h3> LAPORAN PENJUALAN</h3></td>

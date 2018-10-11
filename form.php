@@ -20,72 +20,70 @@ if(!isset($_SESSION['login'])) {
   	<link rel="stylesheet" type="text/css" href="coba.css">
   	<link rel="icon" href="img/kopi.png">
 	<style>
-		
-	</style>
-	<style>
-	          body{ 
-	    			background-image:url(img/belakang2.jpg);  
-	    			background-repeat:no-repeat;
-	    			background-position:top; 
-                  	background-size:1400px; 
-                 	border: 2px;
-            	  }
-              label {
-					display: block;
-					color: #ffffff;
-					}
-            .center{
-                      width:550px;
-                      height:auto;
-                      margin:0 auto;
-                      margin-top:40px;
-                      background-color:rgba(23,20,20,0.52);
-                      box-shadow:2px 2px 16px 0px #757575;
-                      padding:30px;
-                  }
-  	    </style>
+          body{ 
+    			background-image:url(img/belakang2.jpg);  
+    			background-repeat:no-repeat;
+              	background-size:1375px; 
+        	  }
+          label {
+				 display: block;
+				 color: #ffffff;
+				}
+	      .kiri {
+	              width:10px;
+	              height:auto;
+	              margin-left:5px;
+	              margin-top:30px;
+	              background-color:rgba(23,20,20,0.52);
+	              box-shadow:2px 2px 16px 0px #757575;
+	              padding:30px;
+	             }
+         
+  	</style>
 </head>
 <body >
-	<form action="" method="POST" class="center" >
-		<center>
-			<h3 style="font-family: comic sans ms; color: #ffff">FORM INPUT PENJUALAN</h3>
-		</center>
-		<ul style="font-family: comis sans ms; color: #fff">
-			<li>
-				<label style="font-family: comic sans ms;" for="tanggal">Tanggal</label>
-					<input class="form-control" type="text" name="tanggal" id="tanggal" style="font-family: comic sans ms;" value="<?php echo @date("d"."-"."m"."-"."y");?>">
-			</li>
-			<li>
-				<label style="font-family: comic sans ms;" for="nama">Pesanan</label>
-				<select class="form-control" style="font-family: comic sans ms;" name="nama" id="nama" onchange="nambahPesanan()">
-					<?php 
-					$sql = "SELECT * FROM `menu`";
-					$menus = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-					while($menu = mysqli_fetch_assoc($menus)){
+	<div class="row m-auto">
+		<div class=" kiri col" >
+			<form action="" method="POST"  >
+				<center>
+					<h3 style="font-family: comic sans ms; color: #ffff">FORM INPUT PENJUALAN</h3>
+				</center>
+					<ul style="font-family: comis sans ms; color: #fff">
+						<li>
+							<label style="font-family: comic sans ms;" for="tanggal">Tanggal</label>
+								<input class="form-control" type="text" name="tanggal" id="tanggal" style="font-family: comic sans ms;" value="<?php echo @date("d"."-"."m"."-"."y");?>">
+						</li>
+						<li>
+							<label style="font-family: comic sans ms;" for="nama">Pesanan</label>
+							<select class="form-control" style="font-family: comic sans ms;" name="nama" id="nama" onchange="nambahPesanan()">
+								<?php 
+								$sql = "SELECT * FROM `menu`";
+								$menus = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+								while($menu = mysqli_fetch_assoc($menus)){
 
-					?>
-					<option style="font-family: comic sans ms;" value="<?= $menu['ID'] ?>"><?= $menu['nama'] ?></option>
-					<?php 
-						}
-					?>
-				</select>
-			</li>
-			<li>
-				<label style="font-family: comic sans ms;" for="jumlah">Jumlah</label>
-				<input class="form-control" style="font-family: comic sans ms;" type="text" name="jumlah" id="jumlah" onchange="nambahPesanan()"> 
-			</li>
-			<li>
-				<label style="font-family: comic sans ms;" for="harga">Harga</label>
-				<input class="form-control" style="font-family: comic sans ms;" type="text" name="harga" id="harga">
-			</li>
-			<li>
-				<label style="font-family: comic sans ms;" for="harga">Total Harga</label>
-				<input class="form-control" style="font-family: comic sans ms;" type="text" name="total_harga" id="total_harga">
-			</li> 
-			<br>
-				<button class="btn btn-primary" style="font-family: comic sans ms;" type="button" id="tambah_pesanan" onclick="nambahPesanan()">Tambah</button>
-			
-		</ul>
+								?>
+								<option style="font-family: comic sans ms;" value="<?= $menu['ID'] ?>"><?= $menu['nama'] ?></option>
+								<?php 
+									}
+								?>
+							</select>
+						</li>
+						<li>
+							<label style="font-family: comic sans ms;" for="jumlah">Jumlah</label>
+							<input class="form-control" style="font-family: comic sans ms;" type="text" name="jumlah" id="jumlah" onchange="nambahPesanan()"> 
+						</li>
+						<li>
+							<label style="font-family: comic sans ms;" for="harga">Harga</label>
+							<input class="form-control" style="font-family: comic sans ms;" type="text" name="harga" id="harga">
+						</li>
+						<li>
+							<label style="font-family: comic sans ms;" for="harga">Total Harga</label>
+							<input class="form-control" style="font-family: comic sans ms;" type="text" name="total_harga" id="total_harga">
+						</li> 
+						<br>
+							<button class="btn btn-primary" style="font-family: comic sans ms;" type="button" id="tambah_pesanan" onclick="nambahPesanan()">Tambah</button>
+						
+					</ul>
 		<script type="text/javascript" src="jquery-3.3.1.js"></script>
 		<script type="text/javascript">
 			function nambahPesanan(){
@@ -117,6 +115,35 @@ if(!isset($_SESSION['login'])) {
 			}
 		</script>
 	</form>
+	</div>
+	<div class=" col kanan" style="color: #fff">
+	<table class="table"  border="1" style=" background-color:rgba(23,20,20,0.52);
+	              box-shadow:2px 2px 16px 0px #757575;
+	              margin-top: 30px;">
+		<thead>
+			<tr>
+				<th colspan="5" style="text-align: center;">LAPORAN</th>
+			</tr>
+			<tr>
+				<th>Tanggal</th>
+				<th>Pesanan</th>
+				<th>Jumlah</th>
+				<th>Harga</th>
+				<th>Total</th>
+			</tr>	
+		</thead>
+		<tbody>
+			<tr>
+				<td>contoh</td>
+				<td>contoh</td>
+				<td>contoh</td>
+				<td>contoh</td>
+				<td>contoh</td>
+			</tr>
+		</tbody>
+	</table>
+	</div> 
+</div>
 	<div id="footer">
       <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
             <p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </p>
