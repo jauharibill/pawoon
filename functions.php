@@ -42,7 +42,7 @@ function registrasi($data) {
 	// insert database
 	mysqli_query($conn, "INSERT INTO bosses (`username`, `password`) VALUES('$username', '$password')");
 	return mysqli_affected_rows($conn);  
-}
+}	
 
 if (isset($_POST['input'])) {
 	$tanggal = date("Y-m-d");
