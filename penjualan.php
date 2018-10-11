@@ -27,7 +27,6 @@ if(!isset($_SESSION['login'])) {
 			background-repeat:no-repeat;
 			background-position:top; 
 			background-size:1400px; 
-			font-family: comic sans ms;
      	    border: 2px; 
 		}
 		#ex3 {
@@ -88,7 +87,7 @@ if(!isset($_SESSION['login'])) {
 	<center>
 	<form class="">
       <b style="font-family: comic sans ms; color: #ffffff; background:rgba(23,20,20,0.52);">HASIL</b>
-      <input class="form-control" type="text" name="total" style="width: auto; box-shadow: 0px 0px 0px 0px; border-radius: 3px; color:#fff ; background: rgba(23,20,20,0.52); padding: 5px 5px 5px 10px;" value="<?php
+      <input class="form-control" type="text" name="total" style="width: auto; box-shadow: 0px 0px 0px 0px; border-radius: 3px; color:#fff ; background: rgba(23,20,20,0.52); padding: 5px 5px 5px 10px; text-align: center; font-family: comic sans ms" value="<?php
 		echo $total;
 	?>">
     </form>
@@ -102,7 +101,7 @@ if(!isset($_SESSION['login'])) {
 		</a>
 	<div id="footer">
       <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
-            <p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE </p>
+            <p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </p>
       </footer>
     </div>
 </body>

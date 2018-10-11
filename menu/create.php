@@ -35,15 +35,31 @@ if(!isset($_SESSION['login'])) {
                   text-align: center; 
                   width: auto; 
                     }
+         .center{
+                      width:550px;
+                      height:auto;
+                      margin:0 auto;
+                      margin-top:40px;
+                      background-color:rgba(23,20,20,0.52);
+                      box-shadow:2px 2px 16px 0px #757575;
+                      padding:30px;
+                  }
     </style>
-	<title>Create</title>
 </head>
-<body class="center">
-		<form action="store.php" method="POST">
+<body >
+		<form class="center" action="store.php" method="POST">
 		<input class="form-control" type="text" name="nama" placeholder="Nama Pesanan">
+		<br>
 		<input class="form-control" type="number" name="harga" placeholder="Harga">
+		<br>
 		<button class="btn btn-primary" >Simpan</button>
 		</form>
+
+		<div id="footer">
+      <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
+            <p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </p>
+      </footer>
+    </div>
 </body>
 </html>
  
