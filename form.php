@@ -45,7 +45,7 @@ if(!isset($_SESSION['login'])) {
 						</li>
 						<li>
 							<label style="font-family: comic sans ms;" for="nama">Pesanan</label>
-							<select class="form-control" style="font-family: comic sans ms;" name="nama" id="nama" onchange="nambahPesanan()">
+							<select class="form-control" style="font-family: comic sans ms;" name="nama" id="nama" onchange="gantiPesanan()">
 								<?php 
 								$sql = "SELECT * FROM `menu`";
 								$menus = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -74,9 +74,53 @@ if(!isset($_SESSION['login'])) {
 							<button class="btn btn-primary" style="font-family: comic sans ms;" type="button" id="tambah_pesanan" onclick="nambahPesanan()">Tambah</button>
 						
 					</ul>
-		<script type="text/javascript" src="jquery-3.3.1.js"></script>
+		 
+	</form>
+	</div>
+	<div class=" col kanan" style="color: #fff">
+	<table class="table"  border="1" style=" background-color:rgba(23,20,20,0.52);
+	              box-shadow:2px 2px 16px 0px #757575;
+	              margin-top: 30px;">
+		<thead>
+			<tr>
+				<th colspan="5" style="text-align: center;">LAPORAN</th>
+			</tr>
+			<tr>
+				<th>Tanggal</th>
+				<th>Pesanan</th>
+				<th>Jumlah</th>
+				<th>Harga</th>
+				<th>Total</th>
+			</tr>	
+		</thead>
+		<tbody id="total_pesanan">
+			<tr>
+				<td>contoh</td>
+				<td>contoh</td>
+				<td>contoh</td>
+				<td>contoh</td>
+				<td>contoh</td>
+			</tr>
+		</tbody>
+	</table>
+	</div> 
+</div>
+	<div id="footer">
+      <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
+            <p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </p>
+      </footer>
+    </div>
+
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
 		<script type="text/javascript">
-			function nambahPesanan(){
+			function tambahPesanan(){
+				jumlah = $("#jumlah").val();
+				harga = $("#harga").val();
+				total = $("#total").val();
+				ID = $("#nama").val();
+			}
+			
+			function gantiPesanan(){
 				ID = $('#nama').val();
 				jumlah = $("#jumlah").val();
 				harga = $("#harga").val();
@@ -104,40 +148,5 @@ if(!isset($_SESSION['login'])) {
 				clearInterval(Interval);
 			}
 		</script>
-	</form>
-	</div>
-	<div class=" col kanan" style="color: #fff">
-	<table class="table"  border="1" style=" background-color:rgba(23,20,20,0.52);
-	              box-shadow:2px 2px 16px 0px #757575;
-	              margin-top: 30px;">
-		<thead>
-			<tr>
-				<th colspan="5" style="text-align: center;">LAPORAN</th>
-			</tr>
-			<tr>
-				<th>Tanggal</th>
-				<th>Pesanan</th>
-				<th>Jumlah</th>
-				<th>Harga</th>
-				<th>Total</th>
-			</tr>	
-		</thead>
-		<tbody>
-			<tr>
-				<td>contoh</td>
-				<td>contoh</td>
-				<td>contoh</td>
-				<td>contoh</td>
-				<td>contoh</td>
-			</tr>
-		</tbody>
-	</table>
-	</div> 
-</div>
-	<div id="footer">
-      <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
-            <p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </p>
-      </footer>
-    </div>
 </body>
 </html>
