@@ -29,26 +29,16 @@ if(!isset($_SESSION['login'])) {
 				 display: block;
 				 color: #ffffff;
 				}
-	      .kiri {
-	              width:10px;
-	              height:auto;
-	              margin-left:5px;
-	              margin-top:30px;
-	              background-color:rgba(23,20,20,0.52);
-	              box-shadow:2px 2px 16px 0px #757575;
-	              padding:30px;
-	             }
-         
+
   	</style>
 </head>
 <body >
 	<div class="row m-auto">
-		<div class=" kiri col" >
-			<form action="" method="POST"  >
-				<center>
-					<h3 style="font-family: comic sans ms; color: #ffff">FORM INPUT PENJUALAN</h3>
-				</center>
-					<ul style="font-family: comis sans ms; color: #fff">
+		<div class="col" style="background-color:rgba(23,20,20,0.52);
+	              box-shadow:2px 2px 16px 0px #757575;
+	              margin-top: 30px; margin-left:10px;"  >
+				
+					<ul style="font-family: comis sans ms; color: #fff; width: 400px; margin-left: 15px">
 						<li>
 							<label style="font-family: comic sans ms;" for="tanggal">Tanggal</label>
 								<input class="form-control" type="text" name="tanggal" id="tanggal" style="font-family: comic sans ms;" value="<?php echo @date("d"."-"."m"."-"."y");?>">
