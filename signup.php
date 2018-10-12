@@ -23,6 +23,18 @@ if(isset($_POST["register"])) {
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="coba.css">
 	<link rel="icon" href="img/kopi.png">
+	<style>
+		.center{
+                      width:350px;
+                      height:auto;
+                      margin:0 auto;
+                      color: #ffff;
+                      margin-top:40px;
+                      background-color:rgba(23,20,20,0.52);
+                      box-shadow:2px 2px 16px 0px #757575;
+                      padding:40px;
+                  }
+	</style>
 </head>
 <body>
 	<div id="signup">
