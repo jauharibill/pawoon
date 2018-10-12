@@ -54,17 +54,17 @@ if(!isset($_SESSION['login'])) {
 				<input type="text" name="total_harga" id="total_harga">
 			</li> 
 			<li>
-				<button type="button" id="tambah_pesanan" onclick="nambahPesanan()">Tambah</button>
+				<button type="submit" id="tambah_pesanan" >Tambah</button>
 			</li>
 		</ul>
 		<script type="text/javascript" src="jquery-3.3.1.js"></script>
 		<script type="text/javascript">
 			function nambahPesanan(){
-				nama = $('#nama').val();
+				ID = $('#nama').val();
 				jumlah = $("#jumlah").val();
 				harga = $("#harga").val();
 				$.ajax({
-					url:'menu/getMenu.php?id='+nama, 
+					url:'menu/getMenu.php?id='+ID, 
 					type:'GET',
 					success: function(result){
 						data = jQuery.parseJSON(result);
