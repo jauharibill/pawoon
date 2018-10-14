@@ -30,68 +30,74 @@ if(!isset($_SESSION['login'])) {
 	</style>
 </head>
 <body class="text-center">
+	<div>
+		<nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
+			<div>
+				<a class="navbar-brand" href="index.php">
+					<img src="img/boss.png" width="45" height="45">				
+					<b style="color: #fff">BOSS COFFEE</b>
+				</a>
+			</div>
+		</nav>
+	</div>
 	<div class="mr-5 ml-5 ">
-	<table  class="table" border="1" style="box-shadow: 0px 0px 0px 0px; background: rgba(23,20,20,0.52); margin-top: 20px">
-		<thead class="thead- " style="font-family: comic sans ms; text-align: center; color: #ffffff; width: auto; ">
-			<tr>
-          <td colspan="7"><h3> LAPORAN PENJUALAN</h3></td>
-        </tr>
-			<tr>
-				<th scope="no">No.</th>
-				<th scope="tanggal">Tanggal</th>
-				<th scope="nama">Nama</th>
-				<th scope="jumlah">Jumlah</th>
-				<th scope="harga">Harga</th>
-				<th scope="total">Total</th>
-				<th>Aksi</th>
-			</tr>
-		</thead>
-		<tbody style="font-family: comic sans ms; text-align: center; color: #ffffff;">
-			<?php
+		<table  class="table" border="1" style="box-shadow: 0px 0px 0px 0px; background: rgba(23,20,20,0.52); margin-top: 20px">
+			<thead class="thead- " style="font-family: comic sans ms; text-align: center; color: #ffffff; width: auto; ">
+				<tr>
+          			<td colspan="7"><h3> LAPORAN PENJUALAN</h3></td>
+        		</tr>
+				<tr>
+					<th scope="no">No.</th>
+					<th scope="tanggal">Tanggal</th>
+					<th scope="nama">Nama</th>
+					<th scope="jumlah">Jumlah</th>
+					<th scope="harga">Harga</th>
+					<th scope="total">Total</th>
+					<th>Aksi</th>
+				</tr>
+			</thead>
+			<tbody style="font-family: comic sans ms; text-align: center; color: #ffffff;">
+				<?php
 				$total = 0;
 				while($value = mysqli_fetch_assoc($data))	{
 					$total += $value['total'];
-			?>
-			<tr>
-				<td><?= $no; ?></td>
-				<td><?= $value['tanggal']?></td>
-				<td><?= $value['nama']?></td>
-				<td><?= $value['jumlah']?></td>
-				<td><?= $value['harga']?></td>
-				<td><?= $value['total']?></td>
-
-				<td>
-					<a href="functions.php?delete=hapus&id=<?= $value['id'];?>">
-						<button class="btn btn-danger">Hapus</button>
-					</a>
-				</td>
-			</tr>
-			<?php
+				?>
+				<tr>
+					<td><?= $no; ?></td>
+					<td><?= $value['tanggal']?></td>
+					<td><?= $value['nama']?></td>
+					<td><?= $value['jumlah']?></td>
+					<td><?= $value['harga']?></td>
+					<td><?= $value['total']?></td>
+					<td>
+						<a href="functions.php?delete=hapus&id=<?= $value['id'];?>">
+							<button class="btn btn-danger">Hapus</button>
+						</a>
+					</td>
+				</tr>
+				<?php
 				$no++;
-			}
-				 
-			?>
-		</tbody>
-	</table>
-	<center>
-	<form class="">
-      <b style="font-family: comic sans ms; color: #ffffff; background:rgba(23,20,20,0.52);">HASIL</b>
-      <input class="form-control" type="text" name="total" style="width: auto; box-shadow: 0px 0px 0px 0px; border-radius: 3px; color:#fff ; background: rgba(23,20,20,0.52); padding: 5px 5px 5px 10px; text-align: center; font-family: comic sans ms" value="<?php
-		echo $total;
-	?>">
-    </form>
-</center>
-<!--<?php
+				}
+				?>
+			</tbody>
+		</table>
+		<center>
+		<form class="">
+      		<b style="font-family: comic sans ms; color: #ffffff; background:rgba(23,20,20,0.52);">HASIL</b>
+      		<input class="form-control" type="text" name="total" style="width: auto; box-shadow: 0px 0px 0px 0px; border-radius: 3px; color:#fff ; background: rgba(23,20,20,0.52); padding: 5px 5px 5px 10px; text-align: center; font-family: comic sans ms" value="<?php echo $total; ?>">
+    	</form>
+		</center>
+	<!--<?php
 		echo $total;
 	?>-->
-</div>
-		<a href="index.php">
-		 <button class="btn btn-primary">KEMBALI</button>
-		</a>
+	</div>
+	<a href="index.php">
+	 	<button class="btn btn-primary">KEMBALI</button>
+	</a>
 	<div id="footer">
-      <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
-            <p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </p>
-      </footer>
+    	<footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
+        	<p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </p>
+      	</footer>
     </div>
 </body>
 </html>
