@@ -24,6 +24,7 @@ require 'functions.php';
 			<div align="center">
 				<table border="0">
 					<tr>
+
 						<td align="center"><h3>PLEASE LOGIN FIRST</h3></td>
 						<?php if(isset($error)) : ?>
 						<p style="color: red; font-style: italic;">username / password salah</p>
@@ -35,7 +36,15 @@ require 'functions.php';
 				<input class="itpw" type="text" name="username" placeholder="username">
 				<br>
 				<input class="itpw" type="password" name="password" placeholder="password">
-				<br>
+				<br> 
+				<?php 
+				if($_SESSION['login_gagal']){
+							?>
+					<?= $_SESSION['login_gagal'] ?> 
+							<?php
+				}
+				session_destroy();
+				?><br>
 				<input class="its" type="submit" name="login"  value="LOGIN">
 			</form>
 		</div>
