@@ -47,7 +47,7 @@ $data = mysqli_query($conn, "select * from menu");
     <div>
         <nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
             <div>
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="../index.php">
                     <img src="../img/boss.png" width="35" height="35">             
                     <b style="color: #fff">BOSS COFFEE</b>
                 </a>

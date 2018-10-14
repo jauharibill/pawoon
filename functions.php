@@ -61,9 +61,7 @@ if (isset($_POST['input'])) {
 	}
 	 
 	if ($query) {
-		echo "<script>
-				alert('Berhasil ditambahkan kedalam laporan penjualan');
-			 </script>";
+		header("Location: form.php");
 	} else {
 		echo "Error: ". mysqli_error($conn);
 	}
@@ -73,9 +71,7 @@ if(isset($_GET['delete']) == "hapus")	{
 	$id = $_GET['id'];
 	$query = mysqli_query($conn, "delete from penjualan where id = '$id'");
 	if ($query) {
-		echo "<script>
-				alert('Berhasil dihapus dari laporan penjualan');
-			 </script>";	 
+		header("Location: penjualan.php");
 	}else {
 		echo "Error: ".mysqli_error($conn);
 	}
