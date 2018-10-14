@@ -24,7 +24,6 @@ require 'functions.php';
 			<div align="center">
 				<table border="0">
 					<tr>
-
 						<td align="center"><h3>PLEASE LOGIN FIRST</h3></td>
 						<?php if(isset($error)) : ?>
 						<p style="color: red; font-style: italic;">username / password salah</p>
