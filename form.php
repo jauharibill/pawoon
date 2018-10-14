@@ -14,7 +14,6 @@ if(!isset($_SESSION['login'])) {
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>FORM PENJUALAN</title>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
   	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="style.css">
   	<link rel="stylesheet" type="text/css" href="coba.css">
@@ -72,36 +71,56 @@ if(!isset($_SESSION['login'])) {
 							<input class="form-control" style="font-family: comic sans ms;" type="text" name="total_harga" id="total_harga">
 						</li> 
 						<br>
-							<button class="btn btn-primary" style="font-family: comic sans ms;" type="button" id="tambah_pesanan" onclick="tambahPesanan()">Tambah</button>
-						
+						<button class="btn btn-primary" style="font-family: comic sans ms;" type="button" id="tambah_pesanan" onclick="tambahPesanan()">Tambah
+						</button>
+						<a href="index.php" class="btn btn-warning" style="font-family: comic sans ms">Kembali</a>
 					</ul>
 		 
 	</form>
 	</div>
 	<div class=" col kanan" style="color: #fff">
-	<form method="POST" action="">
-	<table class="table"  border="1" style=" background-color:rgba(23,20,20,0.52);
-	              box-shadow:2px 2px 16px 0px #757575;
-	              margin-top: 30px;">
-		<thead>
-			<tr>
-				<th colspan="5" style="text-align: center;">LAPORAN</th>
-			</tr>
-			<tr>
-				<th>Tanggal</th>
-				<th>Pesanan</th>
-				<th>Jumlah</th>
-				<th>Harga</th>
-				<th>Total</th>
-			</tr>	
-		</thead>
-		<tbody id="total_pesanan">
-		</tbody>
-	</table>
-	<button class="btn btn-success" name="input">Simpan</button>
-	</form>
-	</div> 
-</div>
+		<form method="POST" action="">
+			<table class="table"  border="1" style=" background-color:rgba(23,20,20,0.52);
+	        	    box-shadow:2px 2px 16px 0px #757575;
+	            	margin-top: 30px;">
+				<thead>
+					<tr>
+						<th colspan="5" style="text-align: center;">LAPORAN</th>
+					</tr>
+					<tr>
+						<th>Tanggal</th>
+						<th>Pesanan</th>
+						<th>Jumlah</th>
+						<th>Harga</th>
+						<th>Total</th>
+					</tr>	
+				</thead>
+				<tbody id="total_pesanan">
+				</tbody>
+			</table>
+			<button class="btn btn-success" name="input">Simpan</button>
+			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Batal</button>
+		    	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		        	<div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
+		        		<div class="modal-content">
+		        			<div class="modal-header">
+		              			<h5 class="modal-title" id="exampleModalLongTitle">Batal</h5>
+		              			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		              				<span aria-hidden="true">&times;</span>
+		              			</button>
+		            		</div>
+		            		<div class="modal-body">
+		              			Anda yakin ingin membatalkan?
+		            		</div>
+		            		<div class="modal-footer">
+		              			<button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="close">Batal</button>
+		              			<a href="index.php"><button type="button" class="btn btn-danger">OK</button></a>
+		            		</div>
+		          		</div>
+		        	</div>
+		      	</div>
+		</form>
+	</div>
 	<div id="footer">
       <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
             <p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </p>
@@ -156,4 +175,5 @@ if(!isset($_SESSION['login'])) {
 			}
 		</script>
 </body>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 </html>
