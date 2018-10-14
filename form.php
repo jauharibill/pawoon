@@ -79,6 +79,7 @@ if(!isset($_SESSION['login'])) {
 	</form>
 	</div>
 	<div class=" col kanan" style="color: #fff">
+	<form method="POST" action="">
 	<table class="table"  border="1" style=" background-color:rgba(23,20,20,0.52);
 	              box-shadow:2px 2px 16px 0px #757575;
 	              margin-top: 30px;">
@@ -95,15 +96,10 @@ if(!isset($_SESSION['login'])) {
 			</tr>	
 		</thead>
 		<tbody id="total_pesanan">
-			<tr>
-				<td>contoh</td>
-				<td>contoh</td>
-				<td>contoh</td>
-				<td>contoh</td>
-				<td>contoh</td>
-			</tr> 
 		</tbody>
 	</table>
+	<button class="btn btn-success">Simpan</button>
+	</form>
 	</div> 
 </div>
 	<div id="footer">
@@ -120,14 +116,13 @@ if(!isset($_SESSION['login'])) {
 				total = $("#total_harga").val();
 				ID = $("#nama").val();
 				tanggal = $("#tanggal").val();
-				$("#total_pesanan").html("");
 				$("#total_pesanan").append(
 					"<tr>"+
-				"<td>"+tanggal+"</td>"+
-				"<td>"+ID+"</td>"+
-				"<td>"+jumlah+"</td>"+
-				"<td>"+harga+"</td>"+
-				"<td>"+total+"</td>"+
+				"<td><input type='hidden' name='tanggal_list[]' value='"+tanggal+"'>"+tanggal+"</td>"+
+				"<td><input type='hidden' name='nama_list[]' value='"+ID+"'>"+ID+"</td>"+
+				"<td><input type='hidden' name='jumlah_list[] value='"+jumlah+"'>"+jumlah+"</td>"+
+				"<td><input type='hidden' name='harga_list[]' value='"+harga+"'>"+harga+"</td>"+
+				"<td><input type='hidden' name='total_list[]' value='"+total+"'>"+total+"</td>"+
 			"</tr>");
 			}
 			
