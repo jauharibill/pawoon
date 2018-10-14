@@ -138,6 +138,10 @@ for ($page=1;$page<=$number_of_pages;$page++) {
   echo '<a href="index.php?page=' . $page . '">' . $page . '</a> ';
 }
 ?>
-
+<div id="footer">
+      <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
+          <p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </p>
+        </footer>
+</div>
 </body>
 </html>
