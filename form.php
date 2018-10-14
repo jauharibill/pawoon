@@ -46,6 +46,7 @@ if(!isset($_SESSION['login'])) {
 						<li>
 							<label style="font-family: comic sans ms;" for="nama">Pesanan</label>
 							<select class="form-control" style="font-family: comic sans ms;" name="nama" id="nama" onchange="gantiPesanan()">
+								<option value="">-- Pilih --</option>
 								<?php 
 								$sql = "SELECT * FROM `menu`";
 								$menus = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -60,7 +61,7 @@ if(!isset($_SESSION['login'])) {
 						</li>
 						<li>
 							<label style="font-family: comic sans ms;" for="jumlah">Jumlah</label>
-							<input class="form-control" style="font-family: comic sans ms;" type="text" name="jumlah" id="jumlah" onchange="nambahPesanan()"> 
+							<input class="form-control" style="font-family: comic sans ms;" type="text" name="jumlah" id="jumlah" onkeyup="Hitung()"> 
 						</li>
 						<li>
 							<label style="font-family: comic sans ms;" for="harga">Harga</label>
@@ -71,7 +72,7 @@ if(!isset($_SESSION['login'])) {
 							<input class="form-control" style="font-family: comic sans ms;" type="text" name="total_harga" id="total_harga">
 						</li> 
 						<br>
-							<button class="btn btn-primary" style="font-family: comic sans ms;" type="button" id="tambah_pesanan" onclick="nambahPesanan()">Tambah</button>
+							<button class="btn btn-primary" style="font-family: comic sans ms;" type="button" id="tambah_pesanan" onclick="tambahPesanan()">Tambah</button>
 						
 					</ul>
 		 
@@ -100,7 +101,7 @@ if(!isset($_SESSION['login'])) {
 				<td>contoh</td>
 				<td>contoh</td>
 				<td>contoh</td>
-			</tr>
+			</tr> 
 		</tbody>
 	</table>
 	</div> 
@@ -116,8 +117,18 @@ if(!isset($_SESSION['login'])) {
 			function tambahPesanan(){
 				jumlah = $("#jumlah").val();
 				harga = $("#harga").val();
-				total = $("#total").val();
+				total = $("#total_harga").val();
 				ID = $("#nama").val();
+				tanggal = $("#tanggal").val();
+				$("#total_pesanan").html("");
+				$("#total_pesanan").append(
+					"<tr>"+
+				"<td>"+tanggal+"</td>"+
+				"<td>"+ID+"</td>"+
+				"<td>"+jumlah+"</td>"+
+				"<td>"+harga+"</td>"+
+				"<td>"+total+"</td>"+
+			"</tr>");
 			}
 			
 			function gantiPesanan(){
@@ -139,10 +150,11 @@ if(!isset($_SESSION['login'])) {
 				Interval = setInterval("Hitung()",1);
 			}
 			function Hitung()  {
+				console.log('hello');
 				jumlah = parseInt(document.getElementById("jumlah").value);
 				harga = parseInt(document.getElementById("harga").value);
 				total = jumlah * harga;
-				document.getElementById("total").value = total;
+				document.getElementById("total_harga").value = total;
 			}
 			function berhentiHitung()  {
 				clearInterval(Interval);
