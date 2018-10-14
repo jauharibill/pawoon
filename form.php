@@ -100,10 +100,28 @@ if(!isset($_SESSION['login'])) {
 							<th>Total</th>
 						</tr>	
 					</thead>
-					<tbody id="total_pesanan">
+					<tbody id="total_pesanan" >
 					</tbody>
 				</table>
-				<button class="btn btn-success" name="input">Simpan</button>
+				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#simpan">Simpan</button>
+		    	<div class="modal fade" id="simpan" tabindex="-1" role="dialog" aria-labelledby="simpanTitle" aria-hidden="true">
+		        	<div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
+		        		<div class="modal-content">
+		        			<div class="modal-header">
+		              			<h5 class="modal-title" id="simpanTitle">Tersimpan</h5>
+		              			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		              				<span aria-hidden="true">&times;</span>
+		              			</button>
+		            		</div>
+		            		<div class="modal-body">
+		              			Data Sukses Tersimpan
+		            		</div>
+		            		<div class="modal-footer">
+		              			<a href="form.php"><button class="btn btn-success" name="input">OK</button></a>
+		            		</div>
+		          		</div>
+		        	</div>
+		      	</div>
 				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Batal</button>
 		    	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 		        	<div class="modal-dialog p-3 mb-2 bg text-dark" role="document">

@@ -60,11 +60,11 @@ if (isset($_POST['input'])) {
 		echo "gagal menyimpan";
 	}
 	 
-	// if ($query) {
-	// 	echo "Sukses Disimpan";
-	// } else {
-	// 	echo "Error: ". mysqli_error($conn);
-	// }
+	if ($query) {
+		header("Location: form.php");
+	} else {
+		echo "Error: ". mysqli_error($conn);
+	}
 }
 
 if(isset($_GET['delete']) == "hapus")	{
