@@ -61,7 +61,7 @@ if(!isset($_SESSION['login'])) {
 						</li>
 						<li>
 							<label style="font-family: comic sans ms;" for="jumlah">Jumlah</label>
-							<input class="form-control" style="font-family: comic sans ms;" type="text" name="jumlah" id="jumlah" onkeyup="Hitung()"> 
+							<input class="form-control" style="font-family: comic sans ms;" type="number" name="jumlah" id="jumlah" onkeyup="Hitung()"> 
 						</li>
 						<li>
 							<label style="font-family: comic sans ms;" for="harga">Harga</label>
@@ -98,7 +98,7 @@ if(!isset($_SESSION['login'])) {
 		<tbody id="total_pesanan">
 		</tbody>
 	</table>
-	<button class="btn btn-success">Simpan</button>
+	<button class="btn btn-success" name="input">Simpan</button>
 	</form>
 	</div> 
 </div>
@@ -120,7 +120,7 @@ if(!isset($_SESSION['login'])) {
 					"<tr>"+
 				"<td><input type='hidden' name='tanggal_list[]' value='"+tanggal+"'>"+tanggal+"</td>"+
 				"<td><input type='hidden' name='nama_list[]' value='"+ID+"'>"+ID+"</td>"+
-				"<td><input type='hidden' name='jumlah_list[] value='"+jumlah+"'>"+jumlah+"</td>"+
+				"<td><input type='hidden' name='jumlah_list[]' value='"+jumlah+"'>"+jumlah+"</td>"+
 				"<td><input type='hidden' name='harga_list[]' value='"+harga+"'>"+harga+"</td>"+
 				"<td><input type='hidden' name='total_list[]' value='"+total+"'>"+total+"</td>"+
 			"</tr>");

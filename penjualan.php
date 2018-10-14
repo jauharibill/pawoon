@@ -25,7 +25,8 @@ if(!isset($_SESSION['login'])) {
 		 body{ 
 			background-image:url(img/belakang2.jpg);  
 			background-repeat:repeat; 
-			background-size:1360px; 
+			background-size:1360px;
+		 } 
 	</style>
 </head>
 <body class="text-center">
