@@ -70,9 +70,32 @@ if(!isset($_SESSION['login'])) {
 					<td><?= $value['harga']?></td>
 					<td><?= $value['total']?></td>
 					<td>
-						<a href="functions.php?delete=hapus&id=<?= $value['id'];?>">
+						<!-- <a href="functions.php?delete=hapus&id=<?= $value['id'];?>">
 							<button class="btn btn-danger">Hapus</button>
-						</a>
+						</a> -->
+						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Hapus</button>
+		    			<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		        			<div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
+		        				<div class="modal-content">
+		        					<div class="modal-header">
+		              					<h5 class="modal-title" id="exampleModalLongTitle">Hapus</h5>
+		              					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		              					<span aria-hidden="true">&times;</span>
+		              					</button>
+		            				</div>
+		            				<div class="modal-body">
+		              					Anda yakin ingin menghapus data penjualan?
+		            				</div>
+		            				<div class="modal-footer">
+		              					<button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="close">Batal</button>
+		              					<!-- <a href="index.php"><button type="button" class="btn btn-danger">OK</button></a> -->
+		              					<a href="functions.php?delete=hapus&id=<?= $value['id'];?>">
+											<button class="btn btn-danger">Hapus</button>
+										</a>
+		            				</div>
+		          				</div>
+		        			</div>
+		      			</div>
 					</td>
 				</tr>
 				<?php
@@ -93,7 +116,7 @@ if(!isset($_SESSION['login'])) {
 	</div>
 	<a href="index.php">
 	 	<button class="btn btn-primary">KEMBALI</button>
-	</a>
+	</a><br><br><br><br><br>
 	<div id="footer">
     	<footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
         	<p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </p>
