@@ -35,7 +35,15 @@ require 'functions.php';
 				<input class="itpw" type="text" name="username" placeholder="username">
 				<br>
 				<input class="itpw" type="password" name="password" placeholder="password">
-				<br>
+				<br> 
+				<?php 
+				if($_SESSION['login_gagal']){
+							?>
+					<?= $_SESSION['login_gagal'] ?> 
+							<?php
+				}
+				session_destroy();
+				?><br>
 				<input class="its" type="submit" name="login"  value="LOGIN">
 			</form>
 		</div>

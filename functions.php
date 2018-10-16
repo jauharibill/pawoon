@@ -2,7 +2,8 @@
 
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = '';
+// $dbpass = 'secret'; #comment this line if your db need password
+$dbpass = ''; #uncomment this line if your db doesnt need password
 $dbname = 'bosscoffee';
 
 $conn = new mysqli($dbhost,$dbuser,$dbpass,$dbname);
@@ -45,16 +46,22 @@ function registrasi($data) {
 }	
 
 if (isset($_POST['input'])) {
-	$tanggal = date("Y-m-d");
-	$nama = $_POST['nama'];
-	$jumlah = $_POST['jumlah'];
-	$harga = $_POST['harga'];
-	$total = $_POST['total'];
-	$query = mysqli_query($conn, "INSERT INTO penjualan VALUES('', '$tanggal', '$nama', '$jumlah', '$harga', '$total')");
+	if(is_array($_POST['nama_list'])){
+		$nama_pesanan = $_POST['nama_list'];
+		foreach($nama_pesanan as $key => $pesanan){
+			$tanggal = date("Y-m-d");
+			$nama = $_POST['nama_list'][$key];
+			$jumlah = (int) $_POST['jumlah_list'][$key];
+			$harga = $_POST['harga_list'][$key];
+			$total = $_POST['total_list'][$key];
+			$query = mysqli_query($conn, "INSERT INTO penjualan (`tanggal`, `nama`, `jumlah`, `harga`, `total`) VALUES('$tanggal', '$nama', '$jumlah', '$harga', '$total')");		
+		}
+	}else{
+		echo "gagal menyimpan";
+	}
+	 
 	if ($query) {
-		echo "<script>
-				alert('Berhasil ditambahkan kedalam laporan penjualan');
-			 </script>";
+		header("Location: form.php");
 	} else {
 		echo "Error: ". mysqli_error($conn);
 	}
@@ -64,9 +71,7 @@ if(isset($_GET['delete']) == "hapus")	{
 	$id = $_GET['id'];
 	$query = mysqli_query($conn, "delete from penjualan where id = '$id'");
 	if ($query) {
-		echo "<script>
-				alert('Berhasil dihapus dari laporan penjualan');
-			 </script>";	 
+		header("Location: penjualan.php");
 	}else {
 		echo "Error: ".mysqli_error($conn);
 	}

@@ -23,6 +23,10 @@ require 'functions.php';
                 echo "berhasil login";
 				header("Location: index.php");
 				exit;
+			}else{
+				$_SESSION['login_gagal'] = "Username atau Password salah, silahkan ulangi lagi";
+				echo "gagal login";
+				header("Location: login.php");
 			}
 		}
 
