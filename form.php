@@ -17,7 +17,6 @@ if(!isset($_SESSION['login'])) {
     <script type="text/javascript" src="js/bootstrap.js"></script>
   	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="style.css">
-  	<link rel="stylesheet" type="text/css" href="coba.css">
   	<link rel="icon" href="img/kopi.png">
 	<style>
           body{ 
@@ -26,7 +25,7 @@ if(!isset($_SESSION['login'])) {
               	background-size:1375px; 
         	  }
           label {
-				 display: block;
+				 display: ;
 				 color: #ffffff;
 				}
 
@@ -34,11 +33,11 @@ if(!isset($_SESSION['login'])) {
 </head>
 <body >
 	<div class="row m-auto">
-		<div class="col" style="background-color:rgba(23,20,20,0.52);
-	              box-shadow:2px 2px 16px 0px #757575;
+		<div class="col" style="background-color:rgba(20,20,20,0.52);
+	              box-shadow:2px 2px 12px 0px #757575;
 	              margin-top: 30px; margin-left:10px;"  >
 				
-					<ul style="font-family: comis sans ms; color: #fff; width: 400px; margin-left: 15px">
+					<ul style="font-family: comis sans ms; color: #fff; width: 300px; margin-left: 15px">
 						<li>
 							<label style="font-family: comic sans ms;" for="tanggal">Tanggal</label>
 								<input class="form-control" type="text" name="tanggal" id="tanggal" style="font-family: comic sans ms;" value="<?php echo @date("d"."-"."m"."-"."y");?>">
@@ -109,7 +108,7 @@ if(!isset($_SESSION['login'])) {
 	<div class=" col kanan" style="color: #fff">
 	<table class="table"  border="1" style=" background-color:rgba(23,20,20,0.52);
 	              box-shadow:2px 2px 16px 0px #757575;
-	              margin-top: 30px;">
+	              margin-top: 30px; text-align: center;">
 		<thead>
 			<tr>
 				<th colspan="5" style="text-align: center;">LAPORAN</th>
