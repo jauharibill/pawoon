@@ -71,6 +71,11 @@ require 'functions.php';
 			 <a href="menu/index.php">
 	    		<img src="img/menu.png" class="rounded" width="200">
 	    	</a>   
+	    </div> 
+		<div class="col">
+			 <a href="stock/index.php">
+	    		<img src="img/menu.png" class="rounded" width="200">STOCK
+	    	</a>   
 	    </div>
   	</div>
   	<div id="footer">
