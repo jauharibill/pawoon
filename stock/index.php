@@ -2,7 +2,7 @@
 
 include "../functions.php";
 
-$sql = "SELECT ID, nama, tanggal, berat FROM stock";
+$sql = "SELECT ID, nama, tanggal, berat, jumlah FROM stock";
 
 $stocks = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
@@ -17,6 +17,7 @@ $stocks = mysqli_query($conn, $sql) or die(mysqli_error($conn));
     <th>Nama</th>
     <th>Berat</th>
     <th>Tanggal</th>
+    <th>Jumlah Stock</th>
     <th colspan=2>Action</th>
 </tr>
 
@@ -30,6 +31,7 @@ while($stock=mysqli_fetch_assoc($stocks)){
     <td><?= $stock['nama'] ?></td>
     <td><?= $stock['berat'] ?></td>
     <td><?= $stock['tanggal'] ?></td>
+    <td><?= $stock['jumlah'] ?></td>
     <td><a href="edit.php?id=<?= $stock['ID'] ?>">Edit</a></td>
     <td><a href="delete.php?id=<?= $stock['ID'] ?>">Delete</a></td>
 </tr>
