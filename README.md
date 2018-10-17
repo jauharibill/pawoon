@@ -6,6 +6,7 @@ Pawoon is website that used by casier to record all order by buyer
 * Akbar Baharuddin Yusuf
 * Diky Seviansyah
 * Andhika Sultan Paluseri
+* Ahmad Mustafiruddin
 
 ## Support
 
