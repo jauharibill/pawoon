@@ -56,7 +56,7 @@ require 'functions.php';
 			</div>
 		</nav>
 	</div>
-	<div class="row m-auto" style="width: 900px; padding-top: 180px;">
+	<div class="row m-auto" style="width: 1000px; padding-top: 180px;">
 	    <div class="col">
 	    	<a href="form.php">
 	    		<img src="img/penjualan.png" class="rounded" width="200">
@@ -74,7 +74,7 @@ require 'functions.php';
 	    </div> 
 		<div class="col">
 			 <a href="stock/index.php">
-	    		<img src="img/menu.png" class="rounded" width="200">STOCK
+	    		<img src="img/kulak.png" class="rounded" width="200">
 	    	</a>   
 	    </div>
   	</div>

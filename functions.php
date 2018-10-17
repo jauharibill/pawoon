@@ -2,7 +2,7 @@
 
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = 'secret'; #comment this line if your db need password
+$dbpass = ''; #comment this line if your db need password
 // $dbpass = ''; #uncomment this line if your db doesnt need password
 $dbname = 'bosscoffee';
 
