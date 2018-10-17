@@ -1,5 +1,5 @@
 # Pawoon
-Pawoon is website that used by casier to record all order by buyer
+Pawoon is website that used by casier to record all order by costumers
 
 ## Contributor
 
