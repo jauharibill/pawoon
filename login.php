@@ -37,7 +37,7 @@ require 'functions.php';
 				<input class="itpw" type="password" name="password" placeholder="password">
 				<br> 
 				<?php 
-				if($_SESSION['login_gagal']){
+				if(isset($_SESSION['login_gagal'])){
 							?>
 					<?= $_SESSION['login_gagal'] ?> 
 							<?php
