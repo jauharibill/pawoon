@@ -159,11 +159,12 @@ if(!isset($_SESSION['login'])) {
 			harga = $("#harga").val();
 			total = $("#total_harga").val();
 			ID = $("#nama").val();
+			nama =$("#nama option:selected").html();
 			tanggal = $("#tanggal").val();
 			$("#total_pesanan").append(
 				"<tr>"+
 					"<td><input type='hidden' name='tanggal_list[]' value='"+tanggal+"'>"+tanggal+"</td>"+
-					"<td><input type='hidden' name='nama_list[]' value='"+ID+"'>"+ID+"</td>"+
+					"<td><input type='hidden' name='nama_list[]' value='"+nama+"'>"+nama+"</td>"+
 					"<td><input type='hidden' name='jumlah_list[]' value='"+jumlah+"'>"+jumlah+"</td>"+
 					"<td><input type='hidden' name='harga_list[]' value='"+harga+"'>"+harga+"</td>"+
 					"<td><input type='hidden' name='total_list[]' value='"+total+"'>"+total+"</td>"+
