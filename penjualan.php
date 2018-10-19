@@ -119,7 +119,7 @@ if(!isset($_SESSION['login'])) {
 	</a><br><br><br><br><br>
 	<div id="footer">
     	<footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
-        	<p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </p>
+        	<b style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </b>
       	</footer>
     </div>
 </body>

@@ -78,10 +78,11 @@ require 'functions.php';
 	    	</a>   
 	    </div>
   	</div>
+  	<!--FOOTER-->
   	<div id="footer">
 		  <footer class="" style="height: auto; line-height: 45px;background-color: #000000; position: fixed; bottom: 0px;width: 100%;  text-align: center;">
 		        <b style="color: #ffffff"> 
-		          BOSS COFFEE | HALF HUMAN HALF COFFEE |
+		          &copy; <?php echo  @date("Y");?>.BOSS COFFEE | HALF HUMAN HALF COFFEE |
 		        </b>    
 		</footer>
 	</div>

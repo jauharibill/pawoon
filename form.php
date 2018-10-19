@@ -42,108 +42,6 @@ if(!isset($_SESSION['login'])) {
 </head>
 <body >
 	<div class="row m-auto">
-<<<<<<< HEAD
-		<div class="col" style="background-color:rgba(20,20,20,0.52);
-	              box-shadow:2px 2px 12px 0px #757575;
-	              margin-top: 30px; margin-left:10px;"  >
-				
-					<ul style="font-family: comis sans ms; color: #fff; width: 300px; margin-left: 15px">
-						<li>
-							<label style="font-family: comic sans ms;" for="tanggal">Tanggal</label>
-								<input class="form-control" type="text" name="tanggal" id="tanggal" style="font-family: comic sans ms;" value="<?php echo @date("d"."-"."m"."-"."y");?>">
-						</li>
-						<li>
-							<label style="font-family: comic sans ms;" for="nama">Pesanan</label>
-							<select class="form-control" style="font-family: comic sans ms;" name="nama" id="nama" onchange="nambahPesanan()">
-								<?php 
-								$sql = "SELECT * FROM `menu`";
-								$menus = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-								while($menu = mysqli_fetch_assoc($menus)){
-
-								?>
-								<option style="font-family: comic sans ms;" value="<?= $menu['ID'] ?>"><?= $menu['nama'] ?></option>
-								<?php 
-									}
-								?>
-							</select>
-						</li>
-						<li>
-							<label style="font-family: comic sans ms;" for="jumlah">Jumlah</label>
-							<input class="form-control" style="font-family: comic sans ms;" type="text" name="jumlah" id="jumlah" onchange="nambahPesanan()"> 
-						</li>
-						<li>
-							<label style="font-family: comic sans ms;" for="harga">Harga</label>
-							<input class="form-control" style="font-family: comic sans ms;" type="text" name="harga" id="harga">
-						</li>
-						<li>
-							<label style="font-family: comic sans ms;" for="harga">Total Harga</label>
-							<input class="form-control" style="font-family: comic sans ms;" type="text" name="total_harga" id="total_harga">
-						</li> 
-						<br>
-							<button class="btn btn-primary" style="font-family: comic sans ms;" type="button" id="tambah_pesanan" onclick="nambahPesanan()">Tambah</button>
-						
-					</ul>
-		<script type="text/javascript" src="jquery-3.3.1.js"></script>
-		<script type="text/javascript">
-			function nambahPesanan(){
-				nama = $('#nama').val();
-				jumlah = $("#jumlah").val();
-				harga = $("#harga").val();
-				$.ajax({
-					url:'menu/getMenu.php?id='+nama, 
-					type:'GET',
-					success: function(result){
-						data = jQuery.parseJSON(result);
-						total = jumlah*(data.harga);
-						$("#harga").val(data.harga);
-						$("#total_harga").val(total);
-				}});
-
-			}
-			function mulaiHitung()  {
-				Interval = setInterval("Hitung()",1);
-			}
-			function Hitung()  {
-				jumlah = parseInt(document.getElementById("jumlah").value);
-				harga = parseInt(document.getElementById("harga").value);
-				total = jumlah * harga;
-				document.getElementById("total").value = total;
-			}
-			function berhentiHitung()  {
-				clearInterval(Interval);
-			}
-		</script>
-	</form>
-	</div>
-	<div class=" col kanan" style="color: #fff">
-	<table class="table"  border="1" style=" background-color:rgba(23,20,20,0.52);
-	              box-shadow:2px 2px 16px 0px #757575;
-	              margin-top: 30px; text-align: center;">
-		<thead>
-			<tr>
-				<th colspan="5" style="text-align: center;">LAPORAN</th>
-			</tr>
-			<tr>
-				<th>Tanggal</th>
-				<th>Pesanan</th>
-				<th>Jumlah</th>
-				<th>Harga</th>
-				<th>Total</th>
-			</tr>	
-		</thead>
-		<tbody>
-			<tr>
-				<td>contoh</td>
-				<td>contoh</td>
-				<td>contoh</td>
-				<td>contoh</td>
-				<td>contoh</td>
-			</tr>
-		</tbody>
-	</table>
-	</div> 
-</div>
-=======
 		<div class="col" style="background-color:rgba(23,20,20,0.52); box-shadow:2px 2px 16px 0px #757575; margin-top: 30px; margin-left:10px;"  >
 			<form>
 				<ul style="font-family: comis sans ms; color: #fff; width: 400px; margin-left: 15px">
@@ -168,7 +66,7 @@ if(!isset($_SESSION['login'])) {
 					</li>
 					<li>
 						<label style="font-family: comic sans ms;" for="jumlah">Jumlah</label>
-						<input class="form-control" style="font-family: comic sans ms;" type="number" name="jumlah" id="jumlah" onkeyup="Hitun()">
+						<input class="form-control" style="font-family: comic sans ms;" type="number" name="jumlah" id="jumlah" onkeyup="Hitung()">
 					</li>
 					<li>
 						<label style="font-family: comic sans ms;" for="harga">Harga</label>
@@ -246,10 +144,9 @@ if(!isset($_SESSION['login'])) {
 			</form>
 		</div>
 	</div>
->>>>>>> 6ffd8396cc84b9671a68adb66f610a760f350938
 	<div id="footer">
       <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
-            <p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </p>
+            <b style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </b>
       </footer>
     </div>
     <!-- <div>

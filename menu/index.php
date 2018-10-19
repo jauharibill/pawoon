@@ -24,7 +24,8 @@ $data = mysqli_query($conn, "select * from menu");
                 background-image:url(../img/gambar4.jpg);  
                 background-repeat:no-repeat;
                 font-family: comic sans ms;
-                font-size:      ;
+                text-align: ;
+                font-size:  ;
                 text-align:;
                 color: #ffffff;
                 background-position:top; 
@@ -140,7 +141,7 @@ for ($page=1;$page<=$number_of_pages;$page++) {
 ?>
 <div id="footer">
       <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
-          <p style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </p>
+          <b style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE </b>
         </footer>
 </div>
 </body>
