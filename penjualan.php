@@ -6,7 +6,18 @@ if(!isset($_SESSION['login'])) {
 }
 
 	require 'functions.php';
-	$data = mysqli_query ($conn, "select * from penjualan");
+	$sql = 'SELECT * FROM penjualan';
+	$data = mysqli_query ($conn, $sql);
+	$jumlah_per_halaman = 10;
+	$jumlah_data = mysqli_num_rows($data);
+	$banyaknya_halaman = ceil($jumlah_data/$jumlah_per_halaman);
+	if (!isset($_GET['halaman'])) {
+		$halaman = 1;
+	} else {
+		$halaman = $_GET['halaman'];
+	}
+	$hasil_halaman_pertama = ($halaman-1)*$jumlah_per_halaman;
+	$sql = 'SELECT * FROM penjualan LIMIT' . $hasil_halaman_pertama . ',' . $jumlah_per_halaman;
 	$no = 1;
 ?>
 
@@ -104,6 +115,11 @@ if(!isset($_SESSION['login'])) {
 				?>
 			</tbody>
 		</table>
+		<?php
+			for ($halaman=1;$halaman<=$banyaknya_halaman;$halaman++) {
+				echo '<a href="penjualan.php?halaman=' .$halaman .'">' . $halaman . '</a>' ;
+			}
+		?>
 		<center>
 		<form class="">
       		<b style="font-family: comic sans ms; color: #ffffff; background:rgba(23,20,20,0.52);">HASIL</b>

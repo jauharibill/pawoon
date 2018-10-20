@@ -149,9 +149,6 @@ if(!isset($_SESSION['login'])) {
             <b style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </b>
       </footer>
     </div>
-    <!-- <div>
-    	<p>INI FOOTER</p>
-    </div> -->
 	<script type="text/javascript" src="jquery-3.3.1.js"></script>
 	<script type="text/javascript">
 		function tambahPesanan(){
