@@ -15,11 +15,9 @@ $data = mysqli_query($conn, "select * from menu");
     <title>INDEX MENU</title>
     <script type="text/javascript" src="../jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
-
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <link rel="stylesheet" type="text/css" href="../coba.css">
-    <!--logo icon-->
     <link rel="icon" href="../img/kopi.png">
     <style>
          body{ 
@@ -48,8 +46,7 @@ $data = mysqli_query($conn, "select * from menu");
 </head >
 <body>
     <div>
-        <nav class="navbar navbar-expand navbar-dark-bg- sticky-top" 
-             style="background-color: #000000">
+        <nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
             <div>
                 <a class="navbar-brand" href="../index.php">
                     <img src="../img/boss.png" width="35" height="35">             
@@ -65,53 +62,20 @@ $data = mysqli_query($conn, "select * from menu");
             </div>
         </nav>
     </div>
+
+
 <br>
-<!--
-<div class="center"> <table class="table center" border="1" style="font-family: comic sans ms">
-    <tr>
-        <th colspan="4" style="text-align: center;">MENU</th>
-    </tr>
-    <tr>
-      <th>ID</th> 
-      <th>NAMA</th> 
-      <th>HARGA</th> 
-      <th>ACTION</th> 
-    </tr>
-    <?php 
-
-    require '../functions.php';
-    $sql = "SELECT * FROM menu";
-    $bunch_of_data = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-
-    while($data = mysqli_fetch_assoc($bunch_of_data)){
-    ?>
-    <tr> 
-        <td><?= $data['ID']; ?></td> 
-        <td><?= $data['nama']; ?></td> 
-        <td><?= $data['harga']; ?></td> 
-        <td><a href="edit.php?id=<?= $data['ID']; ?>"><button class="btn btn-warning">Edit</button></a><a href="delete.php?id=<?= $data['ID']; ?>"><button class="btn btn-danger">Delete</button></a></td> 
-    </tr>
-    <?php 
-    }
-    ?>
-</table>
-</div> -->
-
-<!--php-->
 <?php
 // connect to database
 
 // define how many results you want per page
-$results_per_page = 20;
-
+$results_per_page = 10;
 // find out the number of results stored in database
 $sql='SELECT * FROM menu';
 $result = mysqli_query($conn, $sql);
 $number_of_results = mysqli_num_rows($result);
-
 // determine number of total pages available
 $number_of_pages = ceil($number_of_results/$results_per_page);
-
 // determine which page number visitor is currently on
 if (!isset($_GET['page'])) {
   $page = 1;
@@ -123,26 +87,41 @@ $this_page_first_result = ($page-1)*$results_per_page;
 // retrieve selected results from database and display them on page
 $sql='SELECT * FROM menu LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
 $result = mysqli_query($conn, $sql);
-while($row = mysqli_fetch_array($result)) {
-  echo $row['ID'] . ' . ' . $row['nama']. ' = ' . $row['harga']. '<br>';
-}
-// display the links to the pages
-for ($page=1;$page<=$number_of_pages;$page++) {
-  echo '<a href="index.php?page=' . $page . '">' . $page . '</a> ';
-}
+
 ?>
 
-<!--FOOTER-->
-    <div id="footer">
-      <footer class="" 
-        style="height: auto; line-height: 40px;
-               background-color: #000000; position: fixed;
-               bottom: 0px; width: 100%;
-               text-align: center;">
-          <b style="color: #ffffff"> 
-            &copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | 
-          </b>
+<table class="table table-stripped">
+  <tr>
+    <th>No</th>
+    <th>Nama</th>
+    <th>Harga</th>
+    <th colspan="2" style="text-align: center;">Aksi</th>
+  </tr>
+
+<?php
+while($row = mysqli_fetch_array($result)) {
+  echo "<tr><td>".$row['ID'] . '</td><td> ' . $row['nama']. '</td><td> ' . $row['harga']. "</td><td><button class='btn btn-warning'>Edit</button></td><td class='btn btn-danger'>Delete</td></tr>";
+}
+
+?>
+</table>
+
+<nav aria-label="Page navigation example" style="margin-left: 50px;">
+  <ul class="pagination">
+    <?php
+    // display the links to the pages
+    for ($page=1;$page<=$number_of_pages;$page++) {
+    echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page . '">' . $page . '</a></li>';
+}
+?>    
+  </ul>
+</nav>
+
+<br><br><br>
+<div id="footer">
+      <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
+          <b style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE </b>
         </footer>
-    </div>
+</div>
 </body>
 </html>
