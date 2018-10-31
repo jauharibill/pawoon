@@ -13,9 +13,10 @@ require 'functions.php';
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login Admin BOSS COFFEE</title>
 	<link rel="stylesheet" type="text/css" href="coba.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--icon logo-->
 	<link rel="icon"  href="img/kopi.png" >
 </head>
 <body>
@@ -24,7 +25,9 @@ require 'functions.php';
 			<div align="center">
 				<table border="0">
 					<tr>
-						<td align="center"><h3>PLEASE LOGIN FIRST</h3></td>
+						<td align="center">
+							<h3>PLEASE LOGIN FIRST</h3>
+						</td>
 						<?php if(isset($error)) : ?>
 						<p style="color: red; font-style: italic;">username / password salah</p>
 						<?php endif; ?>

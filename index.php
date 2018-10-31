@@ -16,9 +16,12 @@ require 'functions.php';
 	<title>BOSS COFFEE</title>
 	<script type="text/javascript" src="jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="njajal.css">
+	<!--logo icon-->
 	<link rel="icon" href="img/kopi.png">
 	<style>
 		#ex3 {
@@ -39,8 +42,11 @@ require 'functions.php';
 		<slide><p></p></slide>
 		<slide><p></p></slide>
 	</slider>
+
+<!--HEADER-->
 	<div>
-		<nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
+		<nav class="navbar navbar-expand navbar-dark-bg- sticky-top" 
+			 style="background-color: #000000">
 			<div>
 				<a class="navbar-brand" href="index.php">
 					<img src="img/boss.png" width="45" height="45">				
@@ -56,6 +62,8 @@ require 'functions.php';
 			</div>
 		</nav>
 	</div>
+
+<!--icon menu-->
 	<div class="row m-auto" style="width: 1000px; padding-top: 180px;">
 	    <div class="col">
 	    	<a href="form.php">
@@ -78,9 +86,14 @@ require 'functions.php';
 	    	</a>   
 	    </div>
   	</div>
-  	<!--FOOTER-->
+
+<!--FOOTER-->
   	<div id="footer">
-		  <footer class="" style="height: auto; line-height: 45px;background-color: #000000; position: fixed; bottom: 0px;width: 100%;  text-align: center;">
+		  <footer class="" 
+		  	style="height: auto; line-height: 45px;
+		  		   background-color: #000000; position: fixed;
+		  		   bottom: 0px; width: 100%;
+		  		   text-align: center;">
 		        <b style="color: #ffffff"> 
 		          &copy; <?php echo  @date("Y");?>.BOSS COFFEE | HALF HUMAN HALF COFFEE |
 		        </b>    

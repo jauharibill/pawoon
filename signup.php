@@ -20,8 +20,10 @@ if(isset($_POST["register"])) {
 	<title>HALAMAN REGISTRASI</title>
 	<script type="text/javascript" src="jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="coba.css">
+	<!--icon logo-->
 	<link rel="icon" href="img/kopi.png">
 	<style>
 		.center{

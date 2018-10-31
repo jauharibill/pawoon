@@ -15,9 +15,11 @@ $data = mysqli_query($conn, "select * from menu");
     <title>INDEX MENU</title>
     <script type="text/javascript" src="../jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
+
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <link rel="stylesheet" type="text/css" href="../coba.css">
+    <!--logo icon-->
     <link rel="icon" href="../img/kopi.png">
     <style>
          body{ 
@@ -46,7 +48,8 @@ $data = mysqli_query($conn, "select * from menu");
 </head >
 <body>
     <div>
-        <nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
+        <nav class="navbar navbar-expand navbar-dark-bg- sticky-top" 
+             style="background-color: #000000">
             <div>
                 <a class="navbar-brand" href="../index.php">
                     <img src="../img/boss.png" width="35" height="35">             
@@ -62,12 +65,7 @@ $data = mysqli_query($conn, "select * from menu");
             </div>
         </nav>
     </div>
-<!--<a href="create.php">
-    <button>New</button>
-</a>-->
-
 <br>
-
 <!--
 <div class="center"> <table class="table center" border="1" style="font-family: comic sans ms">
     <tr>
@@ -99,27 +97,21 @@ $data = mysqli_query($conn, "select * from menu");
 </table>
 </div> -->
 
-
-
-
-
-
-
-
-
-
-
+<!--php-->
 <?php
 // connect to database
 
 // define how many results you want per page
 $results_per_page = 20;
+
 // find out the number of results stored in database
 $sql='SELECT * FROM menu';
 $result = mysqli_query($conn, $sql);
 $number_of_results = mysqli_num_rows($result);
+
 // determine number of total pages available
 $number_of_pages = ceil($number_of_results/$results_per_page);
+
 // determine which page number visitor is currently on
 if (!isset($_GET['page'])) {
   $page = 1;
@@ -132,17 +124,25 @@ $this_page_first_result = ($page-1)*$results_per_page;
 $sql='SELECT * FROM menu LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
 $result = mysqli_query($conn, $sql);
 while($row = mysqli_fetch_array($result)) {
-  echo $row['ID'] . ' ' . $row['nama']. ' ' . $row['harga']. '<br>';
+  echo $row['ID'] . ' . ' . $row['nama']. ' = ' . $row['harga']. '<br>';
 }
 // display the links to the pages
 for ($page=1;$page<=$number_of_pages;$page++) {
   echo '<a href="index.php?page=' . $page . '">' . $page . '</a> ';
 }
 ?>
-<div id="footer">
-      <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
-          <b style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE </b>
+
+<!--FOOTER-->
+    <div id="footer">
+      <footer class="" 
+        style="height: auto; line-height: 40px;
+               background-color: #000000; position: fixed;
+               bottom: 0px; width: 100%;
+               text-align: center;">
+          <b style="color: #ffffff"> 
+            &copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | 
+          </b>
         </footer>
-</div>
+    </div>
 </body>
 </html>

@@ -29,8 +29,10 @@ if(!isset($_SESSION['login'])) {
 	<title>LAPORAN PENJUALAN</title>
 	<script type="text/javascript" src="jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<!--icon logo-->
 	<link rel="icon" href="img/kopi.png">
 	<style>
 		 body{ 
@@ -41,6 +43,7 @@ if(!isset($_SESSION['login'])) {
 	</style>
 </head>
 <body class="text-center">
+<!--header-->
 	<div>
 		<nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
 			<div>
@@ -51,6 +54,7 @@ if(!isset($_SESSION['login'])) {
 			</div>
 		</nav>
 	</div>
+<!--tabel laporan penjualan-->
 	<div class="mr-5 ml-5 ">
 		<table  class="table" border="1" style="box-shadow: 0px 0px 0px 0px; background: rgba(23,20,20,0.52); margin-top: 20px">
 			<thead class="thead- " style="font-family: comic sans ms; text-align: center; color: #ffffff; width: auto; ">
@@ -133,9 +137,15 @@ if(!isset($_SESSION['login'])) {
 	<a href="index.php">
 	 	<button class="btn btn-primary">KEMBALI</button>
 	</a><br><br><br><br><br>
+<!--footer-->
 	<div id="footer">
-    	<footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
-        	<b style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </b>
+    	<footer class="" 
+    			style="height: auto; line-height: 40px;
+    				   background-color: #000000; position: fixed;
+    				   bottom: 0px; width: 100%;text-align: center;">
+        	<b style="color: #ffffff">
+        		&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE |
+            </b>
       	</footer>
     </div>
 </body>

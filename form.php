@@ -16,6 +16,7 @@ if(!isset($_SESSION['login'])) {
 	<title>FORM PENJUALAN</title>
   	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="style.css">
+  	<!--icon logo-->
   	<link rel="icon" href="img/kopi.png">
 	<style>
           body{ 
@@ -29,6 +30,7 @@ if(!isset($_SESSION['login'])) {
 				}
 
   	</style>
+<!--HEADER-->
   	<div>
 		<nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
 			<div>
@@ -41,13 +43,19 @@ if(!isset($_SESSION['login'])) {
 	</div>
 </head>
 <body >
+<!--tabel-->
 	<div class="row m-auto">
-		<div class="col" style="background-color:rgba(23,20,20,0.52); box-shadow:2px 2px 16px 0px #757575; margin-top: 30px; margin-left:10px;"  >
+		<div class="col" 
+			 style="background-color:rgba(23,20,20,0.52);
+			 	    box-shadow:2px 2px 16px 0px #757575;
+			 	    margin-top: 30px; margin-left:10px;">
 			<form>
 				<ul style="font-family: comis sans ms; color: #fff; width: 400px; margin-left: 15px">
 					<li>
 						<label style="font-family: comic sans ms;" for="tanggal">Tanggal</label>
-						<input class="form-control" type="text" name="tanggal" id="tanggal" style="font-family: comic sans ms;" value="<?php echo @date("d"."-"."m"."-"."y");?>">
+						<input class="form-control" type="text" name="tanggal" id="tanggal" 
+							   style="font-family: comic sans ms;" 
+							   value="<?php echo @date("d"."-"."m"."-"."y");?>">
 					</li>
 					<li>
 						<label style="font-family: comic sans ms;" for="nama">Pesanan</label>
@@ -84,6 +92,7 @@ if(!isset($_SESSION['login'])) {
 				</ul>
 			</form>
 		</div>
+<!--tabel laporan-->
 		<div class=" col kanan" style="color: #fff">
 			<form method="POST" action="">
 				<table class="table"  border="1" style=" background-color:rgba(23,20,20,0.52); box-shadow:2px 2px 16px 0px #757575; margin-top: 30px;">
@@ -144,11 +153,19 @@ if(!isset($_SESSION['login'])) {
 			</form>
 		</div>
 	</div>
+<!--footer-->
 	<div id="footer">
-      <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
-            <b style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </b>
+      <footer class="" 
+      		  style="height: auto; line-height: 40px;
+      		  		 background-color: #000000; position: fixed;
+      		  		 bottom: 0px; width: 100%;
+      		  		 text-align: center;">
+            <b style="color: #ffffff">
+            	&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | 
+            </b>
       </footer>
     </div>
+<!--scrip-->
 	<script type="text/javascript" src="jquery-3.3.1.js"></script>
 	<script type="text/javascript">
 		function tambahPesanan(){
