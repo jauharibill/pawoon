@@ -89,25 +89,31 @@ $sql='SELECT * FROM menu LIMIT ' . $this_page_first_result . ',' .  $results_per
 $result = mysqli_query($conn, $sql);
 
 ?>
-
-<table class="table table-stripped">
-  <tr>
-    <th>No</th>
-    <th>Nama</th>
-    <th>Harga</th>
-    <th colspan="2" style="text-align: center;">Aksi</th>
-  </tr>
+<div class="mr-5 ml-5">
+  <center>
+  <table class="table" border="1" style="box-shadow: 0px 0px 0px 0px; background: rgba(23, 20, 20, 0.52); margin-top: 20px; text-align: center; width: 75%;">
+    <thead class="thead" style="font-family: comic sans ms; text-align: center; color: #ffffff; width: auto; ">
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Harga</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody style="font-family: comic sans ms; ">
 
 <?php
 while($row = mysqli_fetch_array($result)) {
-  echo "<tr><td>".$row['ID'] . '</td><td> ' . $row['nama']. '</td><td> ' . $row['harga']. "</td><td><button class='btn btn-warning'>Edit</button></td><td class='btn btn-danger'>Delete</td></tr>";
+  echo "<tr><td>".$row['ID'] . '</td><td> ' . $row['nama']. '</td><td> ' . $row['harga']. "</td><td><button class='btn btn-warning'>Edit</button><button class='btn btn-danger'>Delete</button></td></tr>";
 }
 
 ?>
+</tbody>
 </table>
-
-<nav aria-label="Page navigation example" style="margin-left: 50px;">
-  <ul class="pagination">
+</center>
+</div>
+<nav aria-label="Page navigation example" style="margin-left: 47px;">
+  <ul class="pagination justify-content-center">
     <?php
     // display the links to the pages
     for ($page=1;$page<=$number_of_pages;$page++) {
