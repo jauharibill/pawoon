@@ -43,6 +43,11 @@ if(!isset($_SESSION['login'])) {
 			background-image:url(img/belakang2.jpg);  
 			background-repeat:repeat; 
 			background-size:1360px;
+		 }
+		 .page-item.active .page-link {
+		 	background-color: black;
+		 	color: white;
+		 	border-color: blue;
 		 } 
 	</style>
 </head>
@@ -119,11 +124,15 @@ if(!isset($_SESSION['login'])) {
 				?>
 			</tbody>
 		</table>
-		<?php
-			for ($halaman=1;$halaman<=$banyaknya_halaman;$halaman++) {
-				echo '<a href="penjualan.php?halaman=' .$halaman .'">' . $halaman . '</a>' ;
-			}
-		?>
+		<nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+				<?php
+				for ($halaman=1;$halaman<=$banyaknya_halaman;$halaman++) {
+				echo '<li class="page-item active"><a class="page-link" href="penjualan.php?halaman=' .$halaman .'">' . $halaman . '</a></li>' ;
+				}
+				?>
+			</ul>
+		</nav>
 		<center>
 		<form class="">
       		<b style="font-family: comic sans ms; color: #ffffff; background:rgba(23,20,20,0.52);">HASIL</b>

@@ -42,6 +42,11 @@ $data = mysqli_query($conn, "select * from menu");
                   text-align: center; 
                   width: auto; 
                     }
+        .page-item.active .page-link {
+          background-color: black;
+          color: white;
+          border-color: blue;
+        }
     </style>
 </head >
 <body>
@@ -112,12 +117,12 @@ while($row = mysqli_fetch_array($result)) {
 </table>
 </center>
 </div>
-<nav aria-label="Page navigation example" style="margin-left: 47px;">
+<nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
     <?php
     // display the links to the pages
     for ($page=1;$page<=$number_of_pages;$page++) {
-    echo '<li class="page-item"><a class="page-link" href="index.php?page=' . $page . '">' . $page . '</a></li>';
+    echo '<li class="page-item active"><a class="page-link" href="index.php?page=' . $page . '">' . $page . '</a></li>';
 }
 ?>    
   </ul>
