@@ -94,14 +94,14 @@ $result = mysqli_query($conn, $sql);
 
 <?php
 while($row = mysqli_fetch_array($result)) {
-  echo '<tr><td>'.$row['ID'] . '</td>
+  echo '<tr><td> ' . $row['ID'] . '</td>
             <td> ' . $row['nama']. '</td>
             <td> ' . $row['harga']. '</td>
-            <td> 
-                <a href="edit.php?id=<?= $row["ID"]; ?>
+            <td>
+                <a href="edit.php?id= '.$row['ID'].'" >
                   <button class="btn btn-warning">Edit</button>
                 </a>
-                <a href="delete.php?ID=<?= $row["ID"]; ?>
+                <a href="delete.php?id= '.$row['ID'].'" >
                   <button class="btn btn-danger">Hapus</button>
                 </a>  
             </td>
