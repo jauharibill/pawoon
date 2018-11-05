@@ -31,7 +31,7 @@
         <nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
             <div>
                 <a class="navbar-brand" href="../index.php">
-                    <img src="../img/boss.png" width="45" height="45">             
+                    <img src="../img/boss.png" width="55" height="45">             
                     <b style="color: #fff">BOSS COFFEE</b>
                 </a>
             </div>
@@ -39,7 +39,7 @@
   </div><br>
   <div>
   </div>
-	<div class="mr-5 ml-5" ">
+	<div class="mr-5 ml-5" style="font-family: comic sans ms">
 		<form action="store.php" method="POST" class="center" >
 		    <input type="text" class="form-control" name="nama" placeholder="Nama Barang"><br>
 		    <input type="text" class="form-control" name="banyaknya" placeholder="Banyaknya Barang"><br>

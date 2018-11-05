@@ -31,20 +31,20 @@ $stocks = mysqli_query($conn, $sql) or die(mysqli_error($conn));
         <nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
             <div>
                 <a class="navbar-brand" href="../index.php">
-                    <img src="../img/boss.png" width="45" height="45">             
+                    <img src="../img/boss.png" width="55" height="45">             
                     <b style="color: #fff">BOSS COFFEE</b>
                 </a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">    
                     <a href="create.php">
-                        <button class="btn btn-primary">Tambah Stock</button>
+                        <button class="btn btn-primary" style="font-family: comic sans ms">Tambah Stock</button>
                     </a>
                 </ul>    
             </div>
         </nav>
     </div>
-    <div class="mr-5 ml-5">
+    <div class="mr-5 ml-5" style="font-family: comic sans ms">
         <table class="table" border="0" style="color: #ffffff;background-color:rgba(23,20,20,0.32); box-shadow:2px 2px 16px 0px #757575; margin-top: 30px;">
             <thead class="">  
                 <tr class="">
@@ -58,7 +58,7 @@ $stocks = mysqli_query($conn, $sql) or die(mysqli_error($conn));
             </thead>
             <tbody>
                 <?php while($stock=mysqli_fetch_assoc($stocks)){ 
-                    $no++;
+                $no++;
                 ?>
                 <tr class="" >
                     <td><?= $no; ?></td>
