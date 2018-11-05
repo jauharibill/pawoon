@@ -23,17 +23,6 @@ require 'functions.php';
 	<link rel="stylesheet" type="text/css" href="njajal.css">
 	<!--logo icon-->
 	<link rel="icon" href="img/kopi.png">
-	<style>
-		#ex3 {
-			width: auto;
-			box-shadow: 0px 0px 0px 0px;
-			border-radius: 3px; color: #fff;
-			background: rgba(23, 20, 20, 0.52);
-			padding: 5px 5px 5px 10px;
-			font-family: comic sans ms;
-			text-align: center;
-		}
-	</style>
 </head>
 <body class="text-center">
 	<slider>
@@ -95,7 +84,7 @@ require 'functions.php';
 		  		   bottom: 0px; width: 100%;
 		  		   text-align: center;">
 		        <b style="color: #ffffff"> 
-		          &copy; <?php echo  @date("Y");?>.BOSS COFFEE | HALF HUMAN HALF COFFEE |
+		          &copy; <?php echo  @date("Y");?>. BOSS COFFEE | HALF HUMAN HALF COFFEE |
 		        </b>    
 		</footer>
 	</div>

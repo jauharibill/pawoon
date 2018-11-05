@@ -13,7 +13,7 @@
          body{ 
             background-image:url(../img/belakang2.jpg);  
             background-repeat:repeat; 
-            background-size:1360px;
+            background-size:1400px;
          }
          .center{
                       width:550px;
@@ -44,16 +44,50 @@
 		    <input type="text" class="form-control" name="nama" placeholder="Nama Barang"><br>
 		    <input type="text" class="form-control" name="banyaknya" placeholder="Banyaknya Barang"><br>
 		    <input type="text" class="form-control" name="tanggal" placeholder="Tanggal Stock" value="<?= Date('d-m-Y') ?>"><br>
-		    <input type="text" class="form-control" name="jumlah" placeholder="Jumlah Stock">
-		    <br>
-		    <button class="btn btn-primary">Simpan</button>
+		    <input type="text" class="form-control" name="jumlah" placeholder="Jumlah Stock"><br>
+		    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#simpan">Simpan</button>
+          <div class="modal fade" id="simpan" tabindex="-1" role="dialog" aria-labelledby="simpanTitle" aria-hidden="true">
+              <div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                        <h5 class="modal-title" id="simpanTitle">Simpan</h5>
+                    </div>
+                    <div class="modal-body">
+                        Data Sukses Disimpan
+                    </div>
+                    <div class="modal-footer">
+                        <a href="index.php"><button class="btn btn-success" name="input">OK</button></a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#batal">Batal</button>
+             <div class="modal fade" id="batal" tabindex="-1" role="dialog" aria-labelledby="batalTitle" aria-hidden="true">
+              <div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                        <h5 class="modal-title" id="batalTitle">Batal</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Anda yakin ingin membatalkan?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="close">Batal</button>
+                        <a href="index.php"><button type="button" class="btn btn-danger">OK</button></a>
+                    </div>
+                  </div>
+              </div>
+            </div>
 		</form> 
 	</div>
 	<!--FOOTER-->
   	<div id="footer">
 		  <footer class="" style="height: auto; line-height: 45px;background-color: #000000; position: fixed; bottom: 0px;width: 100%;  text-align: center;">
 		        <b style="color: #ffffff"> 
-		          &copy; <?php echo  @date("Y");?>.BOSS COFFEE | HALF HUMAN HALF COFFEE |
+		          &copy; <?php echo  @date("Y");?>. BOSS COFFEE | HALF HUMAN HALF COFFEE |
 		        </b>    
 		</footer>
 	</div>

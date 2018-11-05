@@ -22,7 +22,7 @@ if(!isset($_SESSION['login'])) {
           body{ 
     			background-image:url(img/belakang2.jpg);  
     			background-repeat:no-repeat;
-              	background-size:1375px; 
+              	background-size:1400px; 
         	  }
           label {
 				 display: ;
@@ -157,7 +157,7 @@ if(!isset($_SESSION['login'])) {
              bottom: 0px; width: 100%;
              text-align: center;">
             <b style="color: #ffffff"> 
-              &copy; <?php echo  @date("Y");?>.BOSS COFFEE | HALF HUMAN HALF COFFEE |
+              &copy; <?php echo  @date("Y");?>. BOSS COFFEE | HALF HUMAN HALF COFFEE |
             </b>    
     </footer>
 <!--scrip-->

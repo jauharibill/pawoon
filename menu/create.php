@@ -10,7 +10,7 @@ if(!isset($_SESSION['login'])) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDEX MENU</title>
+    <title>TAMBAH MENU</title>
     <script type="text/javascript" src="../jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
@@ -23,16 +23,6 @@ if(!isset($_SESSION['login'])) {
                 background-position:top; 
                 background-size:1400px; 
                 border: 2px; 
-         }
-
-         #ex3{
-                  width: auto; box-shadow: 0px 0px 0px 0px; 
-                  border-radius: 3px; color:#fff ; 
-                  background: rgba(23,20,20,0.52); 
-                  padding: 5px 5px 5px 10px; 
-                  font-family: comic sans ms; 
-                  text-align: center; 
-                  width: auto; 
          }
          .center{
                       width:550px;
@@ -56,7 +46,7 @@ if(!isset($_SESSION['login'])) {
             </div>
         </nav>
     </div>
-		<form class="center" action="store.php" method="POST">
+		<form class="center" action="store.php" method="POST" style="font-family: comic sans ms;">
 		<input class="form-control" type="text" name="nama" placeholder="Nama Pesanan">
 		<br>
 		<input class="form-control" type="text" name="harga" placeholder="Harga">
@@ -77,8 +67,8 @@ if(!isset($_SESSION['login'])) {
                   </div>
               </div>
             </div>
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong" style="font-family: comic sans ms;">Batal</button>
-          <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="font-family: comic sans ms;">
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong" style="font-family: comic sans ms;">Batal</button>
+             <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="font-family: comic sans ms;">
               <div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -104,7 +94,7 @@ if(!isset($_SESSION['login'])) {
             bottom: 0px; width: 100%;
             text-align: center;">
             <b style="color: #ffffff"> 
-              &copy; <?php echo  @date("Y");?>.BOSS COFFEE | HALF HUMAN HALF COFFEE |
+              &copy; <?php echo  @date("Y");?>. BOSS COFFEE | HALF HUMAN HALF COFFEE |
             </b>    
     </footer>
 </body>

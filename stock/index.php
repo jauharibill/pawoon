@@ -5,7 +5,7 @@ include "../functions.php";
 $sql = "SELECT ID, nama, tanggal, banyaknya, jumlah FROM stock";
 
 $stocks = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-
+$no = 1;
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,7 @@ $stocks = mysqli_query($conn, $sql) or die(mysqli_error($conn));
          body{ 
             background-image:url(../img/belakang2.jpg);  
             background-repeat:repeat; 
-            background-size:1360px;
+            background-size:1400px;
          } 
     </style>
 </head>
@@ -58,7 +58,6 @@ $stocks = mysqli_query($conn, $sql) or die(mysqli_error($conn));
             </thead>
             <tbody>
                 <?php while($stock=mysqli_fetch_assoc($stocks)){ 
-                $no++;
                 ?>
                 <tr class="" >
                     <td><?= $no; ?></td>
@@ -68,10 +67,30 @@ $stocks = mysqli_query($conn, $sql) or die(mysqli_error($conn));
                     <td><?= $stock['jumlah'] ?></td>
                     <td>
                         <a href="edit.php?id=<?= $stock['ID'] ?>"><button class="btn btn-warning">Edit</button></a>
-                        <a href="delete.php?id=<?= $stock['ID'] ?>"><button class="btn btn-danger">Delete</button></a>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Hapus</button>
+                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Hapus</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" style="text-align: left;">
+                                        Anda yakin ingin menghapus data stock?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="close">Batal</button>
+                                        <a href="delete.php?id=<?= $stock['ID'] ?>"><button class="btn btn-danger">Delete</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <?php
+                $no++;
                 }
                 ?>
         </table>
@@ -80,7 +99,7 @@ $stocks = mysqli_query($conn, $sql) or die(mysqli_error($conn));
     <div id="footer">
           <footer class="" style="height: auto; line-height: 45px;background-color: #000000; position: fixed; bottom: 0px;width: 100%;  text-align: center;">
                 <b style="color: #ffffff"> 
-                 &copy; <?php echo  @date("Y");?>.BOSS COFFEE | HALF HUMAN HALF COFFEE |
+                 &copy; <?php echo  @date("Y");?>. BOSS COFFEE | HALF HUMAN HALF COFFEE |
                 </b>    
         </footer>
     </div>    

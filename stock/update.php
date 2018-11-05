@@ -2,13 +2,13 @@
 
 include "../functions.php";
 
-$id = $_GET['id'];
+$ID = $_GET['id'];
 $nama = $_POST['nama'];
-$berat = $_POST['berat'];
+$banyaknya = $_POST['banyaknya'];
 $tanggal = $_POST['tanggal'];
 $jumlah = $_POST['jumlah'];
 
-$sql = "UPDATE stock SET nama='$nama', berat='$berat', tanggal='$tanggal', jumlah='$jumlah' WHERE ID='$id'";
+$sql = "UPDATE `stock` SET `nama`='$nama', `banyaknya`='$banyaknya', `tanggal`='$tanggal', `jumlah`='$jumlah' WHERE `ID`='$ID'";
 
 mysqli_query($conn, $sql) or die(mysqli_error($conn));
 

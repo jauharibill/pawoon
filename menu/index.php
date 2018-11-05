@@ -101,9 +101,28 @@ while($row = mysqli_fetch_array($result)) {
                 <a href="edit.php?id= '.$row['ID'].'" >
                   <button class="btn btn-warning">Edit</button>
                 </a>
-                <a href="delete.php?id= '.$row['ID'].'" >
-                  <button class="btn btn-danger">Hapus</button>
-                </a>  
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Hapus</button>
+                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                  <div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Hapus</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="text-align: left;">
+                            Anda yakin ingin menghapus data dari menu?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="close">Batal</button>
+                            <a href="delete.php?id= '.$row['ID'].'" >
+                              <button class="btn btn-danger">Hapus</button>
+                            </a>  
+                        </div>
+                      </div>
+                  </div>
+                </div>
             </td>
         </tr>';
 }
@@ -122,15 +141,15 @@ while($row = mysqli_fetch_array($result)) {
 ?>    
   </ul>
 </nav>
-<br><br><br>
+<br><br>
 <div id="footer">
     <footer class="" 
         style="height: auto; line-height: 45px;
-             background-color: #000000; position: fixed;
-             bottom: 0px; width: 100%;
+             background-color: #000000; 
+             bottom: 0px; width: 100%; position: fixed;
              text-align: center;">
             <b style="color: #ffffff"> 
-              &copy; <?php echo  @date("Y");?>.BOSS COFFEE | HALF HUMAN HALF COFFEE |
+              &copy; <?php echo  @date("Y");?>. BOSS COFFEE | HALF HUMAN HALF COFFEE |
             </b>    
     </footer>
 </div>

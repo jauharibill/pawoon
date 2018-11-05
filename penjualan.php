@@ -42,7 +42,7 @@ if(!isset($_SESSION['login'])) {
 		 body{ 
 			background-image:url(img/belakang2.jpg);  
 			background-repeat:repeat; 
-			background-size:1360px;
+			background-size:1400px;
 		 }
 		 .page-item.active .page-link {
 		 	background-color: black;
@@ -64,7 +64,7 @@ if(!isset($_SESSION['login'])) {
 	</div>
 	<div class="mr-5 ml-5 ">
 		<table  class="table" border="1" style="box-shadow: 0px 0px 0px 0px; background: rgba(23,20,20,0.52); margin-top: 20px">
-			<thead class="thead- " style="font-family: comic sans ms; text-align: center; color: #ffffff; width: auto; ">
+			<thead class="thead- " style="font-family: comic sans ms; color: #ffffff; width: auto; ">
 				<tr>
           			<td colspan="7"><h3> LAPORAN PENJUALAN</h3></td>
         		</tr>
@@ -101,12 +101,11 @@ if(!isset($_SESSION['login'])) {
 		              					<span aria-hidden="true">&times;</span>
 		              					</button>
 		            				</div>
-		            				<div class="modal-body">
+		            				<div class="modal-body" style="text-align: left;">
 		              					Anda yakin ingin menghapus data penjualan?
 		            				</div>
 		            				<div class="modal-footer">
 		              					<button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="close">Batal</button>
-		              					<!-- <a href="index.php"><button type="button" class="btn btn-danger">OK</button></a> -->
 		              					<a href="functions.php?delete=hapus&id=<?= $value['id'];?>">
 											<button class="btn btn-danger">Hapus</button>
 										</a>
@@ -132,21 +131,21 @@ if(!isset($_SESSION['login'])) {
 		</nav>
 		<center>
 		<form class="">
-      		<b style="font-family: comic sans ms; color: #ffffff; background:rgba(23,20,20,0.52);">HASIL</b>
+      		<b style="font-family: comic sans ms; color: #ffffff; font-size: 20px;">TOTAL</b>
       		<input class="form-control" type="text" name="total" style="width: auto; box-shadow: 0px 0px 0px 0px; border-radius: 3px; color:#fff ; background: rgba(23,20,20,0.52); padding: 5px 5px 5px 10px; text-align: center; font-family: comic sans ms" value="<?php echo $total; ?>">
     	</form>
 		</center>
 	</div><br>
 	<a href="index.php">
 	 	<button class="btn btn-primary" style="font-family: comic sans ms;">KEMBALI</button>
-	</a><br><br><br><br><br>
+	</a><br><br>
 	<footer class="" 
         	style="height: auto; line-height: 45px;
-            background-color: #000000; position: fixed;
-            bottom: 0px; width: 100%;
+            background-color: #000000;
+            bottom: 0px; width: 100%; position: fixed;
             text-align: center;">
             <b style="color: #ffffff"> 
-              &copy; <?php echo  @date("Y");?>.BOSS COFFEE | HALF HUMAN HALF COFFEE |
+              &copy; <?php echo  @date("Y");?>. BOSS COFFEE | HALF HUMAN HALF COFFEE |
             </b>    
     </footer>
 </body>
