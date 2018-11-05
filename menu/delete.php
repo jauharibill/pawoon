@@ -2,9 +2,9 @@
 
 require '../functions.php';
 
-$ID = $_GET['id'];
+$id = $_GET['ID'];
 
-$sql = "DELETE FROM `menu` WHERE `ID`='$ID'";
+$sql = "DELETE FROM `menu` WHERE `ID`='$id'";
 
 mysqli_query($conn, $sql) or die(mysqli_error($conn));
 

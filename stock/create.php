@@ -2,20 +2,20 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>MASUKKAN STOCK</title>
 	<script type="text/javascript" src="../jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <link rel="icon" href="../img/kopi.png">
-    <style>
+  <script type="text/javascript" src="../js/bootstrap.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="icon" href="../img/kopi.png">
+  <style>
          body{ 
             background-image:url(../img/belakang2.jpg);  
             background-repeat:repeat; 
             background-size:1360px;
          }
-          .center{
+         .center{
                       width:550px;
                       height:auto;
                       margin:0 auto;
@@ -23,8 +23,8 @@
                       background-color:rgba(23,20,20,0.32);
                       box-shadow:2px 2px 16px 0px #757575;
                       padding:30px;
-                  } 
-    </style>
+         } 
+  </style>
 </head>
 <body>
 	<div>
@@ -35,19 +35,16 @@
                     <b style="color: #fff">BOSS COFFEE</b>
                 </a>
             </div>
-            <div class="nav-link">
-               <a href="index.php">
-               	<button class="btn btn-primary">List Stock</button>
-               </a> 
-            </div>
         </nav>
-    </div>
+  </div><br>
+  <div>
+  </div>
 	<div class="mr-5 ml-5" ">
 		<form action="store.php" method="POST" class="center" >
 		    <input type="text" class="form-control" name="nama" placeholder="Nama Barang"><br>
-		    <input type="number" class="form-control" name="berat" placeholder="Berat Barang Per Gram"><br>
-		    <input type="text" class="form-control" name="tanggal" placeholder="Tanggal Stock" value="<?= Date('Y-m-h') ?>"><br>
-		    <input type="text" class="form-control" name="jumlah" placeholder="Jumlah Stok">
+		    <input type="text" class="form-control" name="banyaknya" placeholder="Banyaknya Barang"><br>
+		    <input type="text" class="form-control" name="tanggal" placeholder="Tanggal Stock" value="<?= Date('d-m-Y') ?>"><br>
+		    <input type="text" class="form-control" name="jumlah" placeholder="Jumlah Stock">
 		    <br>
 		    <button class="btn btn-primary">Simpan</button>
 		</form> 
@@ -62,5 +59,3 @@
 	</div>
 </body>
 </html>
-
-

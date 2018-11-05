@@ -12,36 +12,21 @@ $data = mysqli_query($conn, "select * from menu");
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDEX MENU</title>
+    <title>MENU</title>
     <script type="text/javascript" src="../jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
-    <link rel="stylesheet" type="text/css" href="../coba.css">
     <link rel="icon" href="../img/kopi.png">
     <style>
          body{ 
                 background-image:url(../img/gambar4.jpg);  
                 background-repeat:no-repeat;
-                font-family: comic sans ms;
-                text-align: ;
-                font-size:  ;
-                text-align:;
                 color: #ffffff;
                 background-position:top; 
                 background-size:1400px; 
                 border: 2px; 
-                        }
-
-         #ex3{
-                  width: auto; box-shadow: 0px 0px 0px 0px; 
-                  border-radius: 3px; color:#fff ; 
-                  background: rgba(23,20,20,0.52); 
-                  padding: 5px 5px 5px 10px; 
-                  font-family: comic sans ms; 
-                  text-align: center; 
-                  width: auto; 
-                    }
+         }
         .page-item.active .page-link {
           background-color: black;
           color: white;
@@ -54,7 +39,7 @@ $data = mysqli_query($conn, "select * from menu");
         <nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
             <div>
                 <a class="navbar-brand" href="../index.php">
-                    <img src="../img/boss.png" width="35" height="35">             
+                    <img src="../img/boss.png" width="55" height="45">             
                     <b style="color: #fff">BOSS COFFEE</b>
                 </a>
             </div>
@@ -96,8 +81,8 @@ $result = mysqli_query($conn, $sql);
 ?>
 <div class="mr-5 ml-5">
   <center>
-  <table class="table" border="1" style="box-shadow: 0px 0px 0px 0px; background: rgba(23, 20, 20, 0.52); margin-top: 20px; text-align: center; width: 75%;">
-    <thead class="thead" style="font-family: comic sans ms; text-align: center; color: #ffffff; width: auto; ">
+  <table class="table" border="1" style="box-shadow: 0px 0px 0px 0px; background: rgba(23, 20, 20, 0.52); margin-top: 20px; text-align: center; width: 75%; font-family: comic sans ms;">
+    <thead class="thead" style="text-align: center; color: #ffffff; width: auto; ">
       <tr>
         <th>No</th>
         <th>Nama</th>
@@ -105,13 +90,23 @@ $result = mysqli_query($conn, $sql);
         <th>Aksi</th>
       </tr>
     </thead>
-    <tbody style="font-family: comic sans ms; ">
+    <tbody>
 
 <?php
 while($row = mysqli_fetch_array($result)) {
-  echo "<tr><td>".$row['ID'] . '</td><td> ' . $row['nama']. '</td><td> ' . $row['harga']. "</td><td><button class='btn btn-warning'>Edit</button><button class='btn btn-danger'>Delete</button></td></tr>";
+  echo '<tr><td>'.$row['ID'] . '</td>
+            <td> ' . $row['nama']. '</td>
+            <td> ' . $row['harga']. '</td>
+            <td> 
+                <a href="edit.php?id=<?= $row["ID"]; ?>
+                  <button class="btn btn-warning">Edit</button>
+                </a>
+                <a href="delete.php?ID=<?= $row["ID"]; ?>
+                  <button class="btn btn-danger">Hapus</button>
+                </a>  
+            </td>
+        </tr>';
 }
-
 ?>
 </tbody>
 </table>
@@ -122,17 +117,22 @@ while($row = mysqli_fetch_array($result)) {
     <?php
     // display the links to the pages
     for ($page=1;$page<=$number_of_pages;$page++) {
-    echo '<li class="page-item active"><a class="page-link" href="index.php?page=' . $page . '">' . $page . '</a></li>';
+    echo '<li class="page-item active" style="font-family: comic sans ms;"><a class="page-link" href="index.php?page=' . $page . '">' . $page . '</a></li>';
 }
 ?>    
   </ul>
 </nav>
-
 <br><br><br>
 <div id="footer">
-      <footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
-          <b style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE </b>
-        </footer>
+    <footer class="" 
+        style="height: auto; line-height: 45px;
+             background-color: #000000; position: fixed;
+             bottom: 0px; width: 100%;
+             text-align: center;">
+            <b style="color: #ffffff"> 
+              &copy; <?php echo  @date("Y");?>.BOSS COFFEE | HALF HUMAN HALF COFFEE |
+            </b>    
+    </footer>
 </div>
 </body>
 </html>

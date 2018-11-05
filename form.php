@@ -35,7 +35,7 @@ if(!isset($_SESSION['login'])) {
 		<nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
 			<div>
 				<a class="navbar-brand" href="index.php">
-					<img src="img/boss.png" width="45" height="45">				
+					<img src="img/boss.png" width="55" height="45">				
 					<b style="color: #fff">BOSS COFFEE</b>
 				</a>
 			</div>
@@ -92,10 +92,10 @@ if(!isset($_SESSION['login'])) {
 				</ul>
 			</form>
 		</div>
-<!--tabel laporan-->
+		<!--tabel laporan-->
 		<div class=" col kanan" style="color: #fff">
 			<form method="POST" action="">
-				<table class="table"  border="1" style=" background-color:rgba(23,20,20,0.52); box-shadow:2px 2px 16px 0px #757575; margin-top: 30px;">
+				<table class="table"  border="1" style=" background-color:rgba(23,20,20,0.52); box-shadow:2px 2px 16px 0px #757575; margin-top: 30px; font-family: comic sans ms;">
 					<thead>
 						<tr>
 							<th colspan="5" style="text-align: center;">LAPORAN</th>
@@ -111,8 +111,8 @@ if(!isset($_SESSION['login'])) {
 					<tbody id="total_pesanan" >
 					</tbody>
 				</table>
-				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#simpan">Simpan</button>
-		    	<div class="modal fade" id="simpan" tabindex="-1" role="dialog" aria-labelledby="simpanTitle" aria-hidden="true">
+				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#simpan" style="font-family: comic sans ms;">Simpan</button>
+		    	<div class="modal fade" id="simpan" tabindex="-1" role="dialog" aria-labelledby="simpanTitle" aria-hidden="true" style="font-family: comic sans ms;">
 		        	<div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
 		        		<div class="modal-content">
 		        			<div class="modal-header">
@@ -127,8 +127,8 @@ if(!isset($_SESSION['login'])) {
 		          		</div>
 		        	</div>
 		      	</div>
-				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Batal</button>
-		    	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong" style="font-family: comic sans ms;">Batal</button>
+		    	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="font-family: comic sans ms;">
 		        	<div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
 		        		<div class="modal-content">
 		        			<div class="modal-header">
@@ -151,17 +151,15 @@ if(!isset($_SESSION['login'])) {
 		</div>
 	</div>
 <!--footer-->
-	<div id="footer">
-      <footer class="" 
-      		  style="height: auto; line-height: 40px;
-      		  		 background-color: #000000; position: fixed;
-      		  		 bottom: 0px; width: 100%;
-      		  		 text-align: center;">
-            <b style="color: #ffffff">
-            	&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | 
-            </b>
-      </footer>
-    </div>
+	<footer class="" 
+        style="height: auto; line-height: 45px;
+             background-color: #000000; position: fixed;
+             bottom: 0px; width: 100%;
+             text-align: center;">
+            <b style="color: #ffffff"> 
+              &copy; <?php echo  @date("Y");?>.BOSS COFFEE | HALF HUMAN HALF COFFEE |
+            </b>    
+    </footer>
 <!--scrip-->
 	<script type="text/javascript" src="jquery-3.3.1.js"></script>
 	<script type="text/javascript">

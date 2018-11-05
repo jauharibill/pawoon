@@ -2,7 +2,7 @@
 
 include "../functions.php";
 
-$sql = "SELECT ID, nama, tanggal, berat, jumlah FROM stock";
+$sql = "SELECT ID, nama, tanggal, banyaknya, jumlah FROM stock";
 
 $stocks = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
@@ -12,7 +12,7 @@ $stocks = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAMBAH STOCK</title>
+    <title>TABEL STOCK</title>
     <script type="text/javascript" src="../jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
@@ -35,46 +35,45 @@ $stocks = mysqli_query($conn, $sql) or die(mysqli_error($conn));
                     <b style="color: #fff">BOSS COFFEE</b>
                 </a>
             </div>
-            <div class="nav-link">
-                 <a href="create.php">
-                    <button class="btn btn-primary">Tambah Stock</button>
-                 </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">    
+                    <a href="create.php">
+                        <button class="btn btn-primary">Tambah Stock</button>
+                    </a>
+                </ul>    
             </div>
         </nav>
     </div>
     <div class="mr-5 ml-5">
         <table class="table" border="0" style="color: #ffffff;background-color:rgba(23,20,20,0.32); box-shadow:2px 2px 16px 0px #757575; margin-top: 30px;">
-          <thead class="">  
-            <tr class="">
-                <th>ID</th>
-                <th>Nama</th>
-                <th>Berat</th>
-                <th>Tanggal</th>
-                <th>Jumlah Stock</th>
-                <th colspan=2>Action</th>
-            </tr>
-          </thead>
-            <?php while($stock=mysqli_fetch_assoc($stocks)){ ?>
-            <tr class="" >
-                <td><?= $stock['ID'] ?></td>
-                <td><?= $stock['nama'] ?></td>
-                <td><?= $stock['berat'] ?></td>
-                <td><?= $stock['tanggal'] ?></td>
-                <td><?= $stock['jumlah'] ?></td>
-                <td>
-                    <a href="edit.php?id=<?= $stock['ID'] ?>"><button class="btn btn-warning">Edit</button></a>
-                </td>
-                <td>
-                    <a href="delete.php?id=<?= $stock['ID'] ?>"><button class="btn btn-danger">Delete</button></a>
-                </td>
-            </tr>
-
-<?php
-
-}
-
-?>
-
+            <thead class="">  
+                <tr class="">
+                    <th scope="no">NO</th>
+                    <th>Nama</th>
+                    <th>Banyaknya</th>
+                    <th>Tanggal</th>
+                    <th>Jumlah Stock</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while($stock=mysqli_fetch_assoc($stocks)){ 
+                    $no++;
+                ?>
+                <tr class="" >
+                    <td><?= $no; ?></td>
+                    <td><?= $stock['nama'] ?></td>
+                    <td><?= $stock['banyaknya'] ?></td>
+                    <td><?= $stock['tanggal'] ?></td>
+                    <td><?= $stock['jumlah'] ?></td>
+                    <td>
+                        <a href="edit.php?id=<?= $stock['ID'] ?>"><button class="btn btn-warning">Edit</button></a>
+                        <a href="delete.php?id=<?= $stock['ID'] ?>"><button class="btn btn-danger">Delete</button></a>
+                    </td>
+                </tr>
+                <?php
+                }
+                ?>
         </table>
     </div>
     <!--FOOTER-->

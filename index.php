@@ -49,7 +49,7 @@ require 'functions.php';
 			 style="background-color: #000000">
 			<div>
 				<a class="navbar-brand" href="index.php">
-					<img src="img/boss.png" width="45" height="45">				
+					<img src="img/boss.png" width="55" height="45">				
 					<b style="color: #fff">BOSS COFFEE</b>
 				</a>
 			</div>

@@ -56,7 +56,7 @@ if(!isset($_SESSION['login'])) {
 		<nav class="navbar navbar-expand navbar-dark-bg- sticky-top" style="background-color: #000000">
 			<div>
 				<a class="navbar-brand" href="index.php">
-					<img src="img/boss.png" width="45" height="45">				
+					<img src="img/boss.png" width="55" height="45">				
 					<b style="color: #fff">BOSS COFFEE</b>
 				</a>
 			</div>
@@ -91,9 +91,6 @@ if(!isset($_SESSION['login'])) {
 					<td><?= $value['harga']?></td>
 					<td><?= $value['total']?></td>
 					<td>
-						<!-- <a href="functions.php?delete=hapus&id=<?= $value['id'];?>">
-							<button class="btn btn-danger">Hapus</button>
-						</a> -->
 						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Hapus</button>
 		    			<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 		        			<div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
@@ -128,7 +125,7 @@ if(!isset($_SESSION['login'])) {
 			<ul class="pagination justify-content-center">
 				<?php
 				for ($halaman=1;$halaman<=$banyaknya_halaman;$halaman++) {
-				echo '<li class="page-item active"><a class="page-link" href="penjualan.php?halaman=' .$halaman .'">' . $halaman . '</a></li>' ;
+				echo '<li class="page-item active" style="font-family: comic sans ms;"><a class="page-link" href="penjualan.php?halaman=' .$halaman .'">' . $halaman . '</a></li>' ;
 				}
 				?>
 			</ul>
@@ -139,17 +136,18 @@ if(!isset($_SESSION['login'])) {
       		<input class="form-control" type="text" name="total" style="width: auto; box-shadow: 0px 0px 0px 0px; border-radius: 3px; color:#fff ; background: rgba(23,20,20,0.52); padding: 5px 5px 5px 10px; text-align: center; font-family: comic sans ms" value="<?php echo $total; ?>">
     	</form>
 		</center>
-	<!--<?php
-		echo $total;	
-	?>-->
-	</div>
+	</div><br>
 	<a href="index.php">
-	 	<button class="btn btn-primary">KEMBALI</button>
+	 	<button class="btn btn-primary" style="font-family: comic sans ms;">KEMBALI</button>
 	</a><br><br><br><br><br>
-	<div id="footer">
-    	<footer class="" style="height: auto;line-height: 40px;background-color: #000000; position: fixed;bottom: 0px;width: 100%;text-align: center;">
-        	<b style="color: #ffffff">&copy; <?php echo  @date("Y");?>. BOSS COFFE | HALF HUMAN HALF COFFEE | </b>
-      	</footer>
-    </div>
+	<footer class="" 
+        	style="height: auto; line-height: 45px;
+            background-color: #000000; position: fixed;
+            bottom: 0px; width: 100%;
+            text-align: center;">
+            <b style="color: #ffffff"> 
+              &copy; <?php echo  @date("Y");?>.BOSS COFFEE | HALF HUMAN HALF COFFEE |
+            </b>    
+    </footer>
 </body>
 </html>
