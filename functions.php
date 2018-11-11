@@ -2,8 +2,8 @@
 
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = ''; #comment this line if your db need password
-// $dbpass = ''; #uncomment this line if your db doesnt need password
+// $dbpass = 'secret'; #comment this line if your db need password
+$dbpass = ''; #uncomment this line if your db doesnt need password
 $dbname = 'bosscoffee';
 
 $conn = new mysqli($dbhost,$dbuser,$dbpass,$dbname);

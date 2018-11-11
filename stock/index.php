@@ -67,8 +67,8 @@ $no = 1;
                     <td><?= $stock['jumlah'] ?></td>
                     <td>
                         <a href="edit.php?id=<?= $stock['ID'] ?>"><button class="btn btn-warning">Edit</button></a>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Hapus</button>
-                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong<?= $stock['ID'] ?>">Hapus</button>
+                        <div class="modal fade" id="exampleModalLong<?= $stock['ID'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                             <div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
