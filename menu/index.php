@@ -94,15 +94,16 @@ $result = mysqli_query($conn, $sql);
 
 <?php
 while($row = mysqli_fetch_array($result)) {
-  echo '<tr><td> ' . $row['ID'] . '</td>
-            <td> ' . $row['nama']. '</td>
-            <td> ' . $row['harga']. '</td>
+?>
+        <tr><td><?= $row['ID']?></td>
+            <td><?= $row['nama']?></td>
+            <td><?= $row['harga']?></td>
             <td>
-                <a href="edit.php?id= '.$row['ID'].'" >
+                <a href="edit.php?id=<?= $row['ID'] ?>">
                   <button class="btn btn-warning">Edit</button>
                 </a>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Hapus</button>
-                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ini<?= $row['ID'] ?>">Hapus</button>
+                <div class="modal fade" id="ini<?= $row['ID'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                   <div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -116,7 +117,7 @@ while($row = mysqli_fetch_array($result)) {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="close">Batal</button>
-                            <a href="delete.php?id= '.$row['ID'].'" >
+                            <a href="delete.php?id=<?= $row['ID'] ?>" >
                               <button class="btn btn-danger">Hapus</button>
                             </a>  
                         </div>
@@ -124,7 +125,8 @@ while($row = mysqli_fetch_array($result)) {
                   </div>
                 </div>
             </td>
-        </tr>';
+        </tr>
+<?php        
 }
 ?>
 </tbody>

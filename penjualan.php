@@ -91,8 +91,8 @@ if(!isset($_SESSION['login'])) {
 					<td><?= $value['harga']?></td>
 					<td><?= $value['total']?></td>
 					<td>
-						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">Hapus</button>
-		    			<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#itu<?= $value['id']?>">Hapus</button>
+		    			<div class="modal fade" id="itu<?= $value['id']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 		        			<div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
 		        				<div class="modal-content">
 		        					<div class="modal-header">
