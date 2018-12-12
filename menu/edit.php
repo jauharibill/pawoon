@@ -14,6 +14,9 @@ $sql = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
 $menu = mysqli_fetch_assoc($sql);
 
+$query = "SELECT * FROM stock";
+$stocks = mysqli_query($conn, $query) or die(mysqli_error($conn));
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,6 +63,13 @@ $menu = mysqli_fetch_assoc($sql);
     <form class="center" action="update.php?id=<?= $menu['ID'] ?>" method="POST" style="font-family: comic sans ms;">
 	<input class="form-control" type="text" name="nama" placeholder="Nama Pesanan" value="<?= $menu['nama'] ?>"><br>
 	<input class="form-control" type="number" name="harga" placeholder="Harga" value="<?= $menu['harga'] ?>"><br>
+    <select class="form-control" name="stock_id">
+            <option value="0">Pilih Stock</option>
+            <?php while($stock = mysqli_fetch_assoc($stocks)){ ?>
+                <option value="<?= $stock['ID'] ?>" <?= ($stock['ID']==$menu['stock_id'])?"selected":"" ?>><?= $stock['nama'] ?></option>
+            <?php } ?>
+    </select>
+    <br>
 	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#update">Update</button>
           <div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="updateTitle" aria-hidden="true">
               <div class="modal-dialog p-3 mb-2 bg text-dark" role="document">

@@ -87,6 +87,7 @@ $result = mysqli_query($conn, $sql);
         <th>No</th>
         <th>Nama</th>
         <th>Harga</th>
+        <th>Stock</th>
         <th>Aksi</th>
       </tr>
     </thead>
@@ -98,6 +99,7 @@ while($row = mysqli_fetch_array($result)) {
         <tr><td><?= $row['ID']?></td>
             <td><?= $row['nama']?></td>
             <td><?= $row['harga']?></td>
+            <td><?= $row['stock_id']?></td>
             <td>
                 <a href="edit.php?id=<?= $row['ID'] ?>">
                   <button class="btn btn-warning">Edit</button>
