@@ -7,7 +7,6 @@ if(!isset($_SESSION['login'])) {
 
 	require 'functions.php';
 	$sql = 'SELECT * FROM penjualan';
-	$conn = new mysqli('localhost', 'root', '', 'bosscoffee');
 	$data = mysqli_query ($conn, $sql);
 	$total = 0;
 	while ($value= mysqli_fetch_assoc($data)){
@@ -91,8 +90,8 @@ if(!isset($_SESSION['login'])) {
 					<td><?= $value['harga']?></td>
 					<td><?= $value['total']?></td>
 					<td>
-						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#itu<?= $value['id']?>">Hapus</button>
-		    			<div class="modal fade" id="itu<?= $value['id']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#itu<?= $value['ID']?>">Hapus</button>
+		    			<div class="modal fade" id="itu<?= $value['ID']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 		        			<div class="modal-dialog p-3 mb-2 bg text-dark" role="document">
 		        				<div class="modal-content">
 		        					<div class="modal-header">
@@ -106,7 +105,7 @@ if(!isset($_SESSION['login'])) {
 		            				</div>
 		            				<div class="modal-footer">
 		              					<button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="close">Batal</button>
-		              					<a href="functions.php?delete=hapus&id=<?= $value['id'];?>">
+		              					<a href="functions.php?delete=hapus&id=<?= $value['ID'];?>">
 											<button class="btn btn-danger">Hapus</button>
 										</a>
 		            				</div>

@@ -51,25 +51,31 @@ if (isset($_POST['input'])) {
 		foreach($nama_pesanan as $key => $pesanan){
 			$tanggal = date("Y-m-d");
 			$nama = $_POST['nama_list'][$key];
+			$menu_id = $_POST['menu_id'][$key];
 			$jumlah = (int) $_POST['jumlah_list'][$key];
 			$harga = $_POST['harga_list'][$key];
 			$total = $_POST['total_list'][$key];
-			$query = mysqli_query($conn, "INSERT INTO penjualan (`tanggal`, `nama`, `jumlah`, `harga`, `total`) VALUES('$tanggal', '$nama', '$jumlah', '$harga', '$total')");		
+			$penjualan_query = mysqli_query($conn, "INSERT INTO penjualan (`tanggal`, `nama`, `jumlah`, `harga`, `total`, `menu_id`) VALUES('$tanggal', '$nama', '$jumlah', '$harga', '$total', '$menu_id')") or die(mysqli_error($conn));		
+			$menu_stock_query = mysqli_query($conn, "SELECT * FROM menu, stock where `menu`.`stock_id`=`stock`.`ID` AND `menu`.`ID`='$menu_id'") or die(mysqli_error($conn));
+			$menu_stock = mysqli_fetch_assoc($menu_stock_query);
+			$jumlah_stock = (int) $menu_stock['jumlah'];
+			$kurangi_stock = $jumlah_stock-$jumlah;
+			$stock_query = mysqli_query($conn, "UPDATE stock SET `jumlah`='$kurangi_stock'") or die(mysqli_error($conn));
 		}
 	}else{
 		echo "gagal menyimpan";
 	}
 	 
-	if ($query) {
-		header("Location: form.php");
-	} else {
-		echo "Error: ". mysqli_error($conn);
-	}
+	// if ($query) {
+	// 	header("Location: form.php");
+	// } else {
+	// 	echo "Error: ". mysqli_error($conn);
+	// }
 }
 
 if(isset($_GET['delete']) == "hapus")	{
 	$id = $_GET['id'];
-	$query = mysqli_query($conn, "delete from penjualan where id = '$id'");
+	$query = mysqli_query($conn, "DELETE FROM penjualan WHERE `id`='$id'") or die(mysqli_error($conn));
 	if ($query) {
 		header("Location: penjualan.php");
 	}else {
