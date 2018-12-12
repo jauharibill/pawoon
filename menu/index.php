@@ -4,8 +4,8 @@ if(!isset($_SESSION['login'])) {
     header("Location: login.php");
     exit;
 }
-$conn = new mysqli('localhost', 'root', '', 'bosscoffee');
-$data = mysqli_query($conn, "select * from menu");
+include "../functions.php";
+$menus = mysqli_query($conn, "select * from menu");
 ?>
 <!DOCTYPE html>
 <html>

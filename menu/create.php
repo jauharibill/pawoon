@@ -1,9 +1,14 @@
 <?php
+include "../functions.php";
 session_start();
 if(!isset($_SESSION['login'])) {
 	header("Location: login.php");
 	exit;
 }
+
+$query = "SELECT * FROM stock";
+$stocks = mysqli_query($conn, $query) or die(mysqli_error($conn));
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,6 +56,13 @@ if(!isset($_SESSION['login'])) {
 		<br>
 		<input class="form-control" type="text" name="harga" placeholder="Harga">
 		<br>
+        <select class="form-control" name="stock_id">
+            <option value="0">Pilih Stock</option>
+            <?php while($stock = mysqli_fetch_assoc($stocks)){ ?>
+                <option value="<?= $stock['id'] ?>"><?= $stock['nama'] ?></option>
+            <?php } ?>
+        </select>
+        <br>
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#simpan" style="font-family: comic sans ms;">Simpan</button>
           <div class="modal fade" id="simpan" tabindex="-1" role="dialog" aria-labelledby="simpanTitle" aria-hidden="true" style="font-family: comic sans ms;">
               <div class="modal-dialog p-3 mb-2 bg text-dark" role="document">

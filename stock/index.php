@@ -62,7 +62,7 @@ $no = 1;
                 <tr class="" >
                     <td><?= $no; ?></td>
                     <td><?= $stock['nama'] ?></td>
-                    <td><?= $stock['banyaknya'] ?></td>
+                    <td><?= $stock['banyaknya'] ?> Kg</td>
                     <td><?= $stock['tanggal'] ?></td>
                     <td><?= $stock['jumlah'] ?></td>
                     <td>
