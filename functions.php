@@ -60,7 +60,8 @@ if (isset($_POST['input'])) {
 			$menu_stock = mysqli_fetch_assoc($menu_stock_query);
 			$jumlah_stock = (int) $menu_stock['jumlah'];
 			$kurangi_stock = $jumlah_stock-$jumlah;
-			$stock_query = mysqli_query($conn, "UPDATE stock SET `jumlah`='$kurangi_stock'") or die(mysqli_error($conn));
+			$stock_id = $menu_stock['stock_id'];
+			$stock_query = mysqli_query($conn, "UPDATE stock SET `jumlah`='$kurangi_stock' WHERE `ID`='$stock_id'") or die(mysqli_error($conn));
 		}
 	}else{
 		echo "gagal menyimpan";

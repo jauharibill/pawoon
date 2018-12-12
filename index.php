@@ -52,6 +52,29 @@ require 'functions.php';
 		</nav>
 	</div>
 
+<div class="container">
+	<div class="row col-md-12">
+	<?php
+		$query = "SELECT * FROM stock";
+		$stocks = mysqli_query($conn, $query) or die(mysqli_error($conn));
+	?>
+		
+			<div class="col-md-12">
+			<?php
+				while($warning = mysqli_fetch_assoc($stocks)){
+					if($warning['jumlah']<20){
+					?>
+					<br>
+					<div class="alert alert-warning">
+						Peringatan! stock <?= $warning['nama'] ?> kurang dari 20, segera isi ulang.	
+					</div>
+					<?php
+					}
+				}
+			?>
+			</div>
+	</div>
+</div>
 <!--icon menu-->
 	<div class="row m-auto" style="width: 1000px; padding-top: 180px;">
 	    <div class="col">
