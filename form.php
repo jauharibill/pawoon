@@ -6,6 +6,7 @@ if(!isset($_SESSION['login'])) {
 }
 	include 'functions.php';
 	$data = mysqli_query($conn, "select * from penjualan");
+
 ?>
 
 <!DOCTYPE html>
